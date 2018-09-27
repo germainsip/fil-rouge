@@ -1,3 +1,7 @@
 juste pour voire
 encore un
+<<<<<<< HEAD
 germain
+=======
+et encore
+>>>>>>> 193610741fb7a9ad624f59e53bf864dc735fb4e6
