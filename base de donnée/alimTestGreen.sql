@@ -39,7 +39,7 @@ VALUES ("Kelley","Kelsie","Appartement 760-3173 Ullamcorper. Chemin","Sioux City
        ("Roach","Illiana","CP 502, 9629 Ultricies Av.","Pettineo","51027","07 33 45 03 46","convallis.est@magnamalesuada.net","pro","881935886-00005",9),
        ("Hyde","Simon","CP 476, 8686 Aliquam Rd.","Buckley","07660","08 81 75 69 65","id.enim@odio.edu","pro","581207537-00001",10);
 
--- TABLE COMMERCIAUX
+-- TABLE COMMERCIAUX //FIXME régler le problème d'encodage
 
 INSERT INTO commerciaux (commerciaux_nom,commerciaux_prenom,commerciaux_tel,commerciaux_mail)
 VALUES ("Dumont","Rosalie","08 05 47 58 81","dictum@NullamnislMaecenas.net"),
@@ -52,4 +52,44 @@ VALUES ("Dumont","Rosalie","08 05 47 58 81","dictum@NullamnislMaecenas.net"),
        ("Clement","Lutécia","07 06 48 04 45","ac@tinciduntcongue.net"),
        ("Philippe","Mehdi","04 04 93 57 07","eget@urnaNunc.com"),
        ("Dupuis","Valentine","06 72 14 95 83","lectus@egetmollislectus.com");
+
+-- TABLE RUBRIQUE 
+
+INSERT INTO rubrique (rubrique_nom,rubrique_desc)
+VALUES ('batterie','ça tape et ça cogne'),
+       ('cable','de la connection'),
+       ('cases','des rangements et des rangements'),
+       ('guitares','ça gratte'),
+       ('studio','pour ceux qui chantes ou pas...'),
+       ('claviers','pia pia piano'),
+       ('instruments à vent','ça va souffler'),
+       ('sono',"c'est qui le DJ");
+
+
+--  TABLE SOUSRUBRIQUE
+
+INSERT INTO sous_rubrique (sousrub_nom,sousrub_desc,sousrub_rubrique)
+VALUES ('standard','le grand classique','batterie'),
+       ('rock',"indémodable",'batterie'),
+       ('fusion','ça déchire','batterie'),
+       ('jazz','le virtuose','batterie'),
+       ('junior','le pitchoune','batterie'),
+       ('débutant','il faut bien commencer','batterie'),
+       ('compacte','y à plus de place','batterie');
+
+
+-- //TODO TABLE PRODUIT
+
+
+-- //TODO TABLE APPRO
+
+-- //TODO TABLE FOURNISSEUR
+
+-- //TODO TABLE CONTIENT
+
+-- //TODO TABLE LIVRAISON
+
+-- //TODO TABLE  COMMANDE
+
+-- //TODO TABLE  SE COMPOSE DE 
 
