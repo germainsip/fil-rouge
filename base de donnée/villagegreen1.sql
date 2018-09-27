@@ -80,7 +80,8 @@ CREATE TABLE client(
         client_telephone        CHAR (14) NOT NULL ,
         client_mail             Varchar (50) NOT NULL ,        
         client_type             VARCHAR (3) NOT NULL,
-        client_siret            CHAR (15) 
+        client_siret            CHAR (15),
+        client_commerciaux_id   INT 
 );
 
 
@@ -172,7 +173,7 @@ CREATE TABLE contient (
         FOREIGN KEY (contient_produit_id) REFERENCES produit (produit_id)
 );
 
-#------------------------------------------------------------
+/* #------------------------------------------------------------
 # Table: suivi par  
 #------------------------------------------------------------
 
@@ -182,4 +183,4 @@ CREATE TABLE suivipar (
         PRIMARY KEY (suivipar_client_id,suivipar_commerciaux_id),
         FOREIGN KEY (suivipar_client_id) REFERENCES client (client_id),
         FOREIGN KEY (suivipar_commerciaux_id) REFERENCES commerciaux (commerciaux_id)
-);
+); */
