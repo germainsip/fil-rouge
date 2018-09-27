@@ -2,7 +2,7 @@ USE villagegreen;
 /* alimenter les tables dans l'ordre suivant:
 client,commerciaux, suivipar
 rubrique,sousrubrique,produit */
--- table client
+-- table client bidule
 
 INSERT INTO client (client_nom,client_prenom,client_rue,client_ville,client_codepo,client_telephone,client_mail,client_type,client_siret)
 VALUES ("George","Nolan","CP 214, 1460 Dui Avenue","Moerkerke","81313","01 29 81 29 27","et.ultrices.posuere@pharetranibh.ca","par","399412527-00000"),
