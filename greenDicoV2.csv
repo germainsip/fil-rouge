@@ -1,0 +1,626 @@
+Dictionnaire de données 
+
+Nom : id_produit
+Code : ID_PRODUIT
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : nomcourt_produit
+Code : NOMCOURT_PRODUIT
+Type : CHAR
+Taille : 50,
+Commentaire : 
+
+Nom : nom_produit
+Code : NOM_PRODUIT
+Type : VARCHAR
+Taille : 120,
+Commentaire : 
+
+Nom : photo_produit
+Code : PHOTO_PRODUIT
+Type : VARCHAR
+Taille : 120,
+Commentaire : 
+
+Nom : id_sousrub
+Code : ID_SOUSRUB
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : nom_sousrub
+Code : NOM_SOUSRUB
+Type : VARCHAR
+Taille : 120,
+Commentaire : 
+
+Nom : id_rubrique
+Code : ID_RUBRIQUE
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : nom_rubrique
+Code : NOM_RUBRIQUE
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : id_fournisseur
+Code : ID_FOURNISSEUR
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : nom_fournisseur
+Code : NOM_FOURNISSEUR
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : rue_fournisseur
+Code : RUE_FOURNISSEUR
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : cp_fournisseur
+Code : CP_FOURNISSEUR
+Type : INT
+Taille : 5,
+Commentaire : 
+
+Nom : ville_founisseur
+Code : VILLE_FOUNISSEUR
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : tel_fournisseur
+Code : TEL_FOURNISSEUR
+Type : CHAR
+Taille : 10,
+Commentaire : 
+
+Nom : nomcontact_founisseur
+Code : CONTACT_FOUNISSEUR
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : prenomcontact_fournisseur
+Code : PRENOMCONTACT_FOURNISSEUR
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : qtite_produit
+Code : QTITE_PRODUIT
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : prixHT_produit
+Code : PRIXHT_PRODUIT
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : id_catclient
+Code : ID_CATCLIENT
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : nom_catclient
+Code : NOM_CATCLIENT
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : taux_catclient
+Code : TAUX_CATCLIENT
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : prixachat
+Code : PRIXACHAT
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : id_client
+Code : ID_CLIENT
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : nom_client
+Code : NOM_CLIENT
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : id_commerciaux
+Code : ID_COMMERCIAUX
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : nom_commerciaux
+Code : NOM_COMMERCIAUX
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : prenom_commerciaux
+Code : PRENOM_COMMERCIAUX
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : tel_commerciaux
+Code : TEL_COMMERCIAUX
+Type : VARCHAR
+Taille : 10,
+Commentaire : 
+
+Nom : id_commande
+Code : ID_COMMANDE
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : id_commande
+Code : ID_COMMANDE
+Type : VARCHAR
+Taille : 10,
+Commentaire : 
+
+Nom : date_commande
+Code : DATE_COMMANDE
+Type : DATETIME
+Taille : ,
+Commentaire : 
+
+Nom : datelivr_commande
+Code : DATELIVR_COMMANDE
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : reduc_commande
+Code : REDUC_COMMANDE
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : prixtot_commande
+Code : PRIXTOT_COMMANDE
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : nomcourt_produit
+Code : NOMCOURT_PRODUIT
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : qtite_commande
+Code : QTITE_COMMANDE
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : datecom_appro
+Code : DATECOM_APPRO
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : datelivr_appro
+Code : DATELIVR_APPRO
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : qtite_appro
+Code : QTITE_APPRO
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : desc_sousrub
+Code : DESC_SOUSRUB
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : desc_rubrique
+Code : DESC_RUBRIQUE
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : datereglem_commande
+Code : DATEREGLEM_COMMANDE
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : rue_client
+Code : RUE_CLIENT
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : ville_client
+Code : VILLE_CLIENT
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : codepo_client
+Code : CODEPO_CLIENT
+Type : INT
+Taille : 5,
+Commentaire : 
+
+Nom : telephone_client
+Code : TELEPHONE_CLIENT
+Type : VARCHAR
+Taille : 10,
+Commentaire : 
+
+Nom : mail_client
+Code : MAIL_CLIENT
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : id_facture
+Code : ID_COMMANDE
+Type : VARCHAR
+Taille : 10,
+Commentaire : 
+
+Nom : date_livraison
+Code : DATE_LIVRAISON
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : adresse_livraison
+Code : ADRESSE_LIVRAISON
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : date_facture
+Code : DATE_FACTURE
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : adresse_facturation
+Code : ADRESSE_FACTURATION
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : id_livraison
+Code : ID_LIVRAISON
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : num_bon_livraison
+Code : NUM_BON_LIVRAISON
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : qte_liv
+Code : QTE_LIV
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : produit_id
+Code : PRODUIT_ID
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : produit_nomcourt
+Code : PRODUIT_NOMCOURT
+Type : CHAR
+Taille : 50,
+Commentaire : 
+
+Nom : produit_nom
+Code : PRODUIT_NOM
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : produit_photo
+Code : PRODUIT_PHOTO
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : produit_qtite
+Code : PRODUIT_QTITE
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : produit_prixHT
+Code : PRODUIT_PRIXHT
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : appro_prixachat
+Code : APPRO_PRIXACHAT
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : appro_datecom
+Code : APPRO_DATECOM
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : appro_datelivr
+Code : APPRO_DATELIVR
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : appro_qtite
+Code : APPRO_QTITE
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : fournisseur_id
+Code : FOURNISSEUR_ID
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : fournisseur_nom
+Code : FOURNISSEUR_NOM
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : fournisseur_rue
+Code : FOURNISSEUR_RUE
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : fournisseur_cp
+Code : FOURNISSEUR_CP
+Type : INT
+Taille : 5,
+Commentaire : 
+
+Nom : fournisseur_ville
+Code : FOURNISSEUR_VILLE
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : fournisseur_tel
+Code : FOURNISSEUR_TEL
+Type : CHAR
+Taille : 10,
+Commentaire : 
+
+Nom : fournisseur_nomcontact
+Code : FOURNISSEUR_NOMCONTACT
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : fournisseur_prenomcontact
+Code : FOURNISSEUR_PRENOMCONTACT
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : commande_id
+Code : COMMANDE_ID
+Type : VARCHAR
+Taille : 10,
+Commentaire : 
+
+Nom : commande_date
+Code : COMMANDE_DATE
+Type : DATETIME
+Taille : ,
+Commentaire : 
+
+Nom : commande_reduc
+Code : COMMANDE_REDUC
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : commande_prixtot
+Code : COMMANDE_PRIXTOT
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : commande_datereglem
+Code : COMMANDE_DATEREGLEM
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : commande_date_facture
+Code : COMMANDE_DATE_FACTURE
+Type : DATE
+Taille : ,
+Commentaire : 
+
+Nom : commande_adresse_livraison
+Code : COMMANDE_ADRESSE_LIVRAISON
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : commande_adresse_facturation
+Code : COMMANDE_ADRESSE_FACTURATION
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : client_id
+Code : CLIENT_ID
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : client_nom
+Code : CLIENT_NOM
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : client_rue
+Code : CLIENT_RUE
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : client_ville
+Code : CLIENT_VILLE
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : client_codepo
+Code : CLIENT_CODEPO
+Type : INT
+Taille : 5,
+Commentaire : 
+
+Nom : client_telephone
+Code : CLIENT_TELEPHONE
+Type : VARCHAR
+Taille : 10,
+Commentaire : 
+
+Nom : client_mail
+Code : CLIENT_MAIL
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : catclient_id
+Code : CATCLIENT_ID
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : catclient_nom
+Code : CATCLIENT_NOM
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : catclient_taux
+Code : CATCLIENT_TAUX
+Type : INT
+Taille : ,
+Commentaire : 
+
+Nom : commerciaux_id
+Code : COMMERCIAUX_ID
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : commerciaux_nom
+Code : COMMERCIAUX_NOM
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : commerciaux_prenom
+Code : COMMERCIAUX_PRENOM
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : commerciaux_tel
+Code : COMMERCIAUX_TEL
+Type : VARCHAR
+Taille : 10,
+Commentaire : 
+
+Nom : livraison_id
+Code : ID_LIVRAISON
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : livraison_num_bon
+Code : NUM_BON_LIVRAISON
+Type : VARCHAR
+Taille : 50,
+Commentaire : 
+
+Nom : livraison_date
+Code : ID_COMMANDE
+Type : DATE
+Taille : 10,
+Commentaire : 
+
+Nom : sousrub_id
+Code : SOUSRUB_ID
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : sousrub_nom
+Code : SOUSRUB_NOM
+Type : VARCHAR
+Taille : 120,
+Commentaire : 
+
+Nom : sousrub_desc
+Code : SOUSRUB_DESC
+Type : VARCHAR
+Taille : 500,
+Commentaire : 
+
+Nom : rubrique_id
+Code : RUBRIQUE_ID
+Type : AUTO_INCREMENT
+Taille : ,
+Commentaire : 
+
+Nom : rubrique_nom
+Code : RUBRIQUE_NOM
+Type : VARCHAR
+Taille : 255,
+Commentaire : 
+
+Nom : rubrique_desc
+Code : RUBRIQUE_DESC
+Type : VARCHAR
+Taille : 500,
+Commentaire : 
+
