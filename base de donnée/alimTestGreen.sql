@@ -68,7 +68,7 @@ VALUES ('batterie','ça tape et ça cogne'),
 
 --  TABLE SOUSRUBRIQUE
 
-INSERT INTO sous_rubrique (sousrub_nom,sousrub_desc,sousrub_rubrique)
+INSERT INTO sous_rubrique (sousrub_nom,sousrub_desc,sousrub_rubrique_id)
 VALUES ('standard','le grand classique','batterie'),
        ('rock',"indémodable",'batterie'),
        ('fusion','ça déchire','batterie'),
