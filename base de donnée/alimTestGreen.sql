@@ -67,7 +67,7 @@ VALUES ('batterie','ça tape et ça cogne'),
 
 
 --  TABLE SOUSRUBRIQUE
-
+-- batterie
 INSERT INTO sous_rubrique (sousrub_nom,sousrub_desc,sousrub_rubrique_id)
 VALUES ('standard','le grand classique',1),
        ('rock',"indémodable",1),
@@ -76,7 +76,9 @@ VALUES ('standard','le grand classique',1),
        ('junior','le pitchoune',1),
        ('débutant','il faut bien commencer',1),
        ('compacte','y à plus de place',1);
-
+-- cable
+INSERT INTO sous_rubrique (sousrub_nom,sousrub_desc,sousrub_rubrique_id)
+VALUES (,,),
 
 -- //TODO TABLE PRODUIT
 
