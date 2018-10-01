@@ -77,9 +77,27 @@ VALUES ('standard','le grand classique',1),
        ('débutant','il faut bien commencer',1),
        ('compacte','y à plus de place',1);
 -- cable
-INSERT INTO sous_rubrique (sousrub_nom,sousrub_desc,sousrub_rubrique_id)
-VALUES (,,),
 
+INSERT INTO villagegreen.sous_rubrique (sousrub_nom,sousrub_desc,sousrub_rubrique_id) 
+VALUES ('standard','le grand classique',1),
+       ('rock','indémodable',1),
+       ('fusion','ça déchire',1),
+       ('jazz','le virtuose',1),
+       ('junior','le pitchoune',1),
+       ('débutant','il faut bien commencer',1),
+       ('compacte','y à plus de place',1),
+       ('jack court','longueurs < à un mètre',2),
+       ('jack','longueurs > à un mètre',2),
+       ('mini-jack','mini jack stéréo',2);
+       
+INSERT INTO villagegreen.sous_rubrique (sousrub_nom,sousrub_desc,sousrub_rubrique_id) VALUES 
+('midi','micros et sonos',2)
+,('mixte','adaptateur et double connectics',2)
+,('housse','housses souples',3)
+,('rigide','plastic ou bois delux',3)
+,('basse electrique','du lourd',4)
+,('basse acoustique','pour les unpluged',4)
+;
 -- //TODO TABLE PRODUIT
 
 
