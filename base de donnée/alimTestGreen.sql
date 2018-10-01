@@ -68,14 +68,14 @@ VALUES ('batterie','ça tape et ça cogne'),
 
 --  TABLE SOUSRUBRIQUE
 
-INSERT INTO sous_rubrique (sousrub_nom,sousrub_desc,sousrub_rubrique)
-VALUES ('standard','le grand classique','batterie'),
-       ('rock',"indémodable",'batterie'),
-       ('fusion','ça déchire','batterie'),
-       ('jazz','le virtuose','batterie'),
-       ('junior','le pitchoune','batterie'),
-       ('débutant','il faut bien commencer','batterie'),
-       ('compacte','y à plus de place','batterie');
+INSERT INTO sous_rubrique (sousrub_nom,sousrub_desc,sousrub_rubrique_id)
+VALUES ('standard','le grand classique',1),
+       ('rock',"indémodable",1),
+       ('fusion','ça déchire',1),
+       ('jazz','le virtuose',1),
+       ('junior','le pitchoune',1),
+       ('débutant','il faut bien commencer',1),
+       ('compacte','y à plus de place',1);
 
 
 -- //TODO TABLE PRODUIT
