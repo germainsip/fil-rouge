@@ -173,7 +173,7 @@ CREATE TABLE contient (
         FOREIGN KEY (contient_produit_id) REFERENCES produit (produit_id)
 );
 
-/* #------------------------------------------------------------
+#------------------------------------------------------------
 # Table: suivi par  
 #------------------------------------------------------------
 
@@ -183,4 +183,4 @@ CREATE TABLE suivipar (
         PRIMARY KEY (suivipar_client_id,suivipar_commerciaux_id),
         FOREIGN KEY (suivipar_client_id) REFERENCES client (client_id),
         FOREIGN KEY (suivipar_commerciaux_id) REFERENCES commerciaux (commerciaux_id)
-); */
+); 
