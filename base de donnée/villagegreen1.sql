@@ -184,3 +184,4 @@ CREATE TABLE suivipar (
         FOREIGN KEY (suivipar_client_id) REFERENCES client (client_id),
         FOREIGN KEY (suivipar_commerciaux_id) REFERENCES commerciaux (commerciaux_id)
 ); 
+
