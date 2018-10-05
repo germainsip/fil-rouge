@@ -5,7 +5,8 @@ rubrique,sousrubrique,produit */
 
 -- TABLE CLIENT --
 
-INSERT IGNORE INTO client (client_id,client_nom,client_prenom,client_rue,client_ville,client_codepo,client_telephone,client_mail,client_type,client_siret,client_commerciaux_id)
+INSERT IGNORE 
+INTO client (client_id,client_nom,client_prenom,client_rue,client_ville,client_codepo,client_telephone,client_mail,client_type,client_siret,client_commerciaux_id)
 VALUES (1,"George","Nolan","CP 214, 1460 Dui Avenue","Moerkerke","81313","01 29 81 29 27","et.ultrices.posuere@pharetranibh.ca","par",NULL,1),
        (2,"Sandoval","Linda","Appartement 443-4185 Lacinia. Route","Torgnon","12512","03 45 29 89 67","Proin.dolor@sodales.net","par",NULL,2),
        (3,"Johns","Judah","478-741 Urna. Av.","Baarle-Hertog","68356","01 47 64 91 62","nibh.Phasellus.nulla@veliteu.co.uk","pro","979188216-00001",3),
@@ -16,7 +17,8 @@ VALUES (1,"George","Nolan","CP 214, 1460 Dui Avenue","Moerkerke","81313","01 29 
        (8,"Nicholson","Zeus","3193 Aliquam Ave","Tubeke Tubize","38742","02 90 59 95 10","Sed.eget@lacusUt.net","pro","811978493-00005",8),
        (9,"Brock","Kaseem","Appartement 615-1490 Integer Av.","Fleurus","85736","02 87 17 50 58","Donec.sollicitudin.adipiscing@vulputaterisusa.com","pro","553039645-00005",9),
        (10,"Whitfield","Yoshio","577-7165 Cras Route","Geertruidenberg","40939","04 70 87 00 53","vel.mauris.Integer@gravidamauris.net","par",NULL,10);
-INSERT IGNORE INTO client (client_id,client_nom,client_prenom,client_rue,client_ville,client_codepo,client_telephone,client_mail,client_type,client_siret,client_commerciaux_id)
+INSERT IGNORE 
+INTO client (client_id,client_nom,client_prenom,client_rue,client_ville,client_codepo,client_telephone,client_mail,client_type,client_siret,client_commerciaux_id)
 VALUES (11,"Maldonado","Barbara","556-6930 Amet, Route","Sauvenière","85217","09 38 68 12 56","facilisis.facilisis@nuncestmollis.edu","pro","708808084-00006",1),
        (12,"Raymond","Dean","7882 Luctus Rue","Lonquimay","45354","07 97 96 55 59","cursus@odioEtiam.edu","pro","263853525-00008",2),
        (13,"Mcdonald","Colt","Appartement 911-1540 Augue, Av.","Flint","84769","03 57 86 21 66","quis.accumsan.convallis@nasceturridiculusmus.edu","par",NULL,3),
@@ -27,7 +29,8 @@ VALUES (11,"Maldonado","Barbara","556-6930 Amet, Route","Sauvenière","85217","0
        (18,"Sloan","Cain","3831 Eu Route","Portland","29059","05 76 83 78 57","arcu@egestas.net","par",NULL,8),
        (19,"Davidson","Rana","Appartement 913-1930 Senectus Av.","Camaragibe","38402","07 56 06 71 04","faucibus.Morbi@Quisque.com","par",NULL,9),
        (20,"Oneill","Nasim","9969 Aliquet Route","Coevorden","40616","06 13 28 09 27","urna.justo@at.co.uk","par","307846188-00000",10);
-INSERT IGNORE INTO client (client_id,client_nom,client_prenom,client_rue,client_ville,client_codepo,client_telephone,client_mail,client_type,client_siret,client_commerciaux_id)
+INSERT IGNORE 
+INTO client (client_id,client_nom,client_prenom,client_rue,client_ville,client_codepo,client_telephone,client_mail,client_type,client_siret,client_commerciaux_id)
 VALUES (21,"Kelley","Kelsie","Appartement 760-3173 Ullamcorper. Chemin","Sioux City","87015","04 15 43 21 10","sociis@egestas.com","par",NULL,1),
        (22,"Faulkner","Megan","Appartement 691-6161 Non Rue","Jacksonville","94276","08 79 89 35 23","ac@erosnectellus.co.uk","pro","030486161-00000",2),
        (23,"Cruz","Harlan","590-7854 Scelerisque Ave","Prenzlau","63124","02 73 87 89 86","a.felis.ullamcorper@Fuscediam.co.uk","pro","814796157-00000",3),
@@ -41,7 +44,8 @@ VALUES (21,"Kelley","Kelsie","Appartement 760-3173 Ullamcorper. Chemin","Sioux C
 
 -- TABLE COMMERCIAUX 
 
-INSERT IGNORE INTO commerciaux (commerciaux_id,commerciaux_nom,commerciaux_prenom,commerciaux_tel,commerciaux_mail)
+INSERT IGNORE 
+INTO commerciaux (commerciaux_id,commerciaux_nom,commerciaux_prenom,commerciaux_tel,commerciaux_mail)
 VALUES (1,"Dumont","Rosalie","08 05 47 58 81","dictum@NullamnislMaecenas.net"),
        (2,"Guerin","Amélie","06 23 11 82 05","Cras.eu@diamnunc.edu"),
        (3,"Denis","Martin","02 67 41 64 98","Quisque.nonummy.ipsum@fringilla.ca"),
@@ -55,7 +59,8 @@ VALUES (1,"Dumont","Rosalie","08 05 47 58 81","dictum@NullamnislMaecenas.net"),
 
 -- TABLE RUBRIQUE 
 
-INSERT IGNORE INTO rubrique (rubrique_id,rubrique_nom,rubrique_desc)
+INSERT IGNORE 
+INTO rubrique (rubrique_id,rubrique_nom,rubrique_desc)
 VALUES (1,'batterie','ça tape et ça cogne'),
        (2,'cables','de la connection'),
        (3,'cases','des rangements et des rangements'),
@@ -69,8 +74,8 @@ VALUES (1,'batterie','ça tape et ça cogne'),
 --  TABLE SOUSRUBRIQUE
 
       
-INSERT IGNORE INTO 
-sous_rubrique (sousrub_id,sousrub_nom,sousrub_desc,sousrub_rubrique_id) 
+INSERT IGNORE 
+INTO sous_rubrique (sousrub_id,sousrub_nom,sousrub_desc,sousrub_rubrique_id) 
 VALUES (1,'standard','le grand classique',1),
        (2,'rock','indémodable',1),
        (3,'fusion','ça déchire',1),
@@ -129,7 +134,8 @@ VALUES         (1,'C40BL','Yamaha - Guitare Classique C40BL Noir','../images/def
 
 -- //TABLE APPRO
 
-INSERT IGNORE INTO appro (appro_id,appro_fournisseur_id,appro_produit_id,appro_prixachat,appro_datelivr, appro_qtite)
+INSERT IGNORE 
+INTO appro (appro_id,appro_fournisseur_id,appro_produit_id,appro_prixachat,appro_datelivr, appro_qtite)
 VALUES (1,5,3,200,'2018-05-23',2),
        (2,6,4,2800,'2018-06-26',2),
        (3,7,5,600,'2018-07-09',2),
@@ -169,7 +175,8 @@ VALUES (,,,)
 
 
 -- //TODO TABLE  COMMANDE
-INSERT IGNORE INTO `commande`(commande_id,commande_date,commande_reduc,commande_prixtot,commande_datereglem,commande_date_facture,commande_date_facture,commande_livraison_rue,commande_livraison_ville,commande_livraison_codepo,commande_facturation_rue,commande_facturation_ville ,commande_facturation_codepo,commande_client_id)
+INSERT IGNORE 
+INTO `commande`(commande_id,commande_date,commande_reduc,commande_prixtot,commande_datereglem,commande_date_facture,commande_date_facture,commande_livraison_rue,commande_livraison_ville,commande_livraison_codepo,commande_facturation_rue,commande_facturation_ville ,commande_facturation_codepo,commande_client_id)
 VALUES (1,'2018-01-15',0.10,,,,,,10),
        (2,'2018-03-18',0.20,,,,,,12),
        (3,'2018-05-21',0.30,,,,,,14),
@@ -180,7 +187,8 @@ VALUES (1,'2018-01-15',0.10,,,,,,10),
 
 -- //TODO TABLE  SE COMPOSE DE 
 -- //FIXME cle primaire à confirmer
-INSERT IGNORE INTO `secomposede`(secomposede_commande_id,secomposede_produit_id,secomposede_qtitecommande)
+INSERT IGNORE 
+INTO `secomposede`(secomposede_commande_id,secomposede_produit_id,secomposede_qtitecommande)
 VALUES (1,3,1),
        (2,4,2),
        (3,5,3),
