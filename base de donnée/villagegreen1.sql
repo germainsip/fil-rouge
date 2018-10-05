@@ -35,14 +35,14 @@ CREATE TABLE sous_rubrique(
 #------------------------------------------------------------
 
 CREATE TABLE Produit(
-        produit_id       Int  Auto_increment  NOT NULL PRIMARY KEY,
-        produit_nomcourt Char (50) NOT NULL ,
-        produit_nom      Varchar (255) NOT NULL ,
-        produit_photo    Varchar (255) NOT NULL ,
-        produit_qtite    Int NOT NULL ,
-        produit_prixHT   DECIMAL(7,2) NOT NULL ,
-        produit_qtiteale Int NOT NULL ,
-        produit_sousrub_id       Int NOT NULL,
+        produit_id            Int  Auto_increment  NOT NULL PRIMARY KEY,
+        produit_nomcourt      Char (50) NOT NULL ,
+        produit_nom           Varchar (255) NOT NULL ,
+        produit_photo         Varchar (255) NOT NULL ,
+        produit_qtite         Int NOT NULL ,
+        produit_prixHT        DECIMAL(7,2) NOT NULL ,
+        produit_qtiteale      Int NOT NULL ,
+        produit_sousrub_id    Int NOT NULL,
         FOREIGN KEY (produit_sousrub_id) REFERENCES sous_rubrique(sousrub_id)
 	);
 
@@ -105,12 +105,16 @@ CREATE TABLE commerciaux(
 CREATE TABLE commande(
         commande_id                  INT Auto_increment NOT NULL PRIMARY KEY,
         commande_date                Datetime NOT NULL ,
-        commande_reduc               Int NOT NULL ,
-        commande_prixtot             Int NOT NULL ,
+        commande_reduc               DECIMAL(3,2) NOT NULL ,
+        commande_prixtot             DECIMAL(7,2) NOT NULL ,
         commande_datereglem          Date NOT NULL ,
-        commande_date_facture        Date NOT NULL ,
-        commande_adresse_livraison   Varchar (50) NOT NULL ,
-        commande_adresse_facturation Varchar (50) NOT NULL ,
+        commande_date_facture        Date NOT NULL ,       
+        commande_livraison_rue              Varchar (50) NOT NULL ,
+        commande_livraison_ville            Varchar (50) NOT NULL ,
+        commande_livraison_codepo           CHAR(5) NOT NULL ,
+        commande_facturation_rue              Varchar (50) NOT NULL ,
+        commande_facturation_ville            Varchar (50) NOT NULL ,
+        commande_facturation_codepo           CHAR(5) NOT NULL ,
         commande_client_id                    Int NOT NULL,
         FOREIGN KEY (commande_client_id) REFERENCES client(client_id)
 );
@@ -140,7 +144,8 @@ CREATE TABLE appro(
         appro_datecom         Date NOT NULL ,
         appro_datelivr        Date NOT NULL ,
         appro_qtite           Int NOT NULL,
-        PRIMARY KEY (appro_fournisseur_id,appro_produit_id),
+        appro_id              Int NOT NULL PRIMARY KEY,
+        -- PRIMARY KEY (appro_fournisseur_id,appro_produit_id),
         FOREIGN KEY (appro_fournisseur_id) REFERENCES fournisseur(fournisseur_id),
         FOREIGN KEY (appro_produit_id) REFERENCES produit(produit_id)
 );
@@ -149,13 +154,14 @@ CREATE TABLE appro(
 #------------------------------------------------------------
 # Table: se compose de  OK
 #------------------------------------------------------------
-
+-- //FIXME prix de vente optionnel
 CREATE TABLE secomposede(
+        secomposede_id            INT NOT NULL PRIMARY KEY
         secomposede_commande_id   INT NOT NULL,
         secomposede_produit_id    INT NOT NULL,
         secomposede_qtitecommande INT NOT NULL,
-        secomposede_prixvente     DECIMAL(7,2)NOT NULL,
-        PRIMARY KEY (secomposede_commande_id,secomposede_produit_id),
+        -- secomposede_prixvente     DECIMAL(7,2)NOT NULL,
+        
         FOREIGN KEY (secomposede_commande_id) REFERENCES commande(commande_id),
         FOREIGN KEY (secomposede_produit_id)  REFERENCES produit(produit_id)
 );

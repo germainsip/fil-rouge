@@ -98,63 +98,94 @@ VALUES (1,'standard','le grand classique',1),
 
 
 
-
+-- TABLE PRODUIT
 -- //FIXME controle des sous rubriques
-INSERT IGNORE INTO `Produit` (produit_id,produit_nomcourt,produit_nom,produit_photo,produit_qtite,produit_qtiteale,produit_prixHT,produit_sousrub_id)
-VALUES (1,'C40BL','Yamaha - Guitare Classique C40BL Noir','../images/default_guit.jpg',5,2,130,20),
-       (2,'SG2019','GIBSON SG Standard Tribute 2019 - vintage cherry satin','../images/default_guit.jpg',6,2,856,18),
-       (3,'AE44II','APPLAUSE AE44II Mid Cutaway - natural','../images/default_guit.jpg',3,2,270,19),
-       (4,'AQUI1854','AQUILINA Shelby 4 Custom (#01854) - natural','../images/default_guit.jpg',3,2,3200,15),
-       (5,'CORTSJB6FX','CORT SJB6FX Fretless NAT +bag - natural','../images/default_guit.jpg',5,2,740,16),
-       (6,'FLPROU2','Flyht Pro Case Uni­versal 2 / 120cm','../images/default_guit.jpg',3,2,200,14),
-       (7,'AS50DC','MARSHALL AS50DC Acoustic - Racing Green','../images/default_guit.jpg',2,2,290,21),
-       (8,'FENDRS800','FENDER Rumble Stage 800','../images/default_guit.jpg',8,2,800,22),
-       (9,'BEYTGV35D','BEYERDYNAMIC TG V35d s Mic Set Pack micro avec pied','../images/default_guit.jpg',4,2,60,23),
-       (10,'MIXSQ7','ALLEN AND HEATH SQ-7 table de mixage','../images/default_guit.jpg',2,2,4000,24),
-       (11,'PEXL725PC','PEARLEXL725PC-248 black Smoke','../images/default_guit.jpg',2,2,500,1),
-       (12,'PMMCR22','Pearl Master maple complete Rock 22" satin natural burst','../images/default_guit.jpg',2,2,1200,2),
-       (13,'PEF20-B','Pearl Export fusion 20" High Voltage Blue','../images/default_guit.jpg',2,2,700,3),
-       (14,'PDMP4FJ18-Y','Pearl DMP 4F JAZZ 18" solid yellow','../images/default_guit.jpg',2,2,900,4),
-       (15,'PRJ18-R','Pearl roadshow junior 18" red wine','../images/default_guit.jpg',2,2,390,5),
-       (16,'GBE-BASS','GATOR GBE-BASS','../images/default_guit.jpg',2,2,23,13),
-       (17,'GBE-GUIT','GATOR GBE-GUIT','../images/default_guit.jpg',3,2,20,13),
-       (18,'MR500C','IBANEZ MR500C Road Tour Electric Guitar Case','../images/default_guit.jpg',3,2,150,17),
-       (19,'PRJ18-B','Pearl roadshow junior 18 pouces jet black','../images/default_guit.jpg',2,2,367,6),
-       (20,'EM-54T','Pearl Pearl e/Merge e/Traditional','../images/default_guit.jpg',2,2,3000,7),
-       (21,'PCF-DL10','Ebs Câble de patch guitare 10 cm','../images/default_guit.jpg',2,2,3,8),
-       (22,'EB-6048','Ernie Ball Cables instrument classic jack/jack 3m noir','../images/default_guit.jpg',5,2,17,9),
-       (23,'CCM20FM','Cordial Câble micro XLR 20 m','../images/default_guit.jpg',5,2,18,10);
+INSERT IGNORE 
+INTO `Produit` (produit_id,produit_nomcourt,produit_nom,produit_photo,produit_qtite,produit_qtiteale,produit_prixHT,produit_sousrub_id)
+VALUES         (1,'C40BL','Yamaha - Guitare Classique C40BL Noir','../images/default_guit.jpg',5,2,130,20),
+               (2,'SG2019','GIBSON SG Standard Tribute 2019 - vintage cherry satin','../images/default_guit.jpg',6,2,856,18),
+               (3,'AE44II','APPLAUSE AE44II Mid Cutaway - natural','../images/default_guit.jpg',3,2,270,19),
+               (4,'AQUI1854','AQUILINA Shelby 4 Custom (#01854) - natural','../images/default_guit.jpg',3,2,3200,15),
+               (5,'CORTSJB6FX','CORT SJB6FX Fretless NAT +bag - natural','../images/default_guit.jpg',5,2,740,16),
+               (6,'FLPROU2','Flyht Pro Case Uni­versal 2 / 120cm','../images/default_guit.jpg',3,2,200,14),
+               (7,'AS50DC','MARSHALL AS50DC Acoustic - Racing Green','../images/default_guit.jpg',2,2,290,21),
+               (8,'FENDRS800','FENDER Rumble Stage 800','../images/default_guit.jpg',8,2,800,22),
+               (9,'BEYTGV35D','BEYERDYNAMIC TG V35d s Mic Set Pack micro avec pied','../images/default_guit.jpg',4,2,60,23),
+               (10,'MIXSQ7','ALLEN AND HEATH SQ-7 table de mixage','../images/default_guit.jpg',2,2,4000,24),
+               (11,'PEXL725PC','PEARLEXL725PC-248 black Smoke','../images/default_guit.jpg',2,2,500,1),
+               (12,'PMMCR22','Pearl Master maple complete Rock 22" satin natural burst','../images/default_guit.jpg',2,2,1200,2),
+               (13,'PEF20-B','Pearl Export fusion 20" High Voltage Blue','../images/default_guit.jpg',2,2,700,3),
+               (14,'PDMP4FJ18-Y','Pearl DMP 4F JAZZ 18" solid yellow','../images/default_guit.jpg',2,2,900,4),
+               (15,'PRJ18-R','Pearl roadshow junior 18" red wine','../images/default_guit.jpg',2,2,390,5),
+               (16,'GBE-BASS','GATOR GBE-BASS','../images/default_guit.jpg',2,2,23,13),
+               (17,'GBE-GUIT','GATOR GBE-GUIT','../images/default_guit.jpg',3,2,20,13),
+               (18,'MR500C','IBANEZ MR500C Road Tour Electric Guitar Case','../images/default_guit.jpg',3,2,150,17),
+               (19,'PRJ18-B','Pearl roadshow junior 18 pouces jet black','../images/default_guit.jpg',2,2,367,6),
+               (20,'EM-54T','Pearl Pearl e/Merge e/Traditional','../images/default_guit.jpg',2,2,3000,7),
+               (21,'PCF-DL10','Ebs Câble de patch guitare 10 cm','../images/default_guit.jpg',2,2,3,8),
+               (22,'EB-6048','Ernie Ball Cables instrument classic jack/jack 3m noir','../images/default_guit.jpg',5,2,17,9),
+               (23,'CCM20FM','Cordial Câble micro XLR 20 m','../images/default_guit.jpg',5,2,18,10);
         
 
--- //TODO TABLE APPRO
+-- //TABLE APPRO
+
+INSERT IGNORE INTO appro (appro_id,appro_fournisseur_id,appro_produit_id,appro_prixachat,appro_datelivr, appro_qtite)
+VALUES (1,5,3,200,'2018-05-23',2),
+       (2,6,4,2800,'2018-06-26',2),
+       (3,7,5,600,'2018-07-09',2),
+       (4,8,6,100,'2018-08-22',2),
+       (5,9,7,200,'2018-09-09',2);
 
 -- TABLE FOURNISSEUR
-INSERT IGNORE INTO fournisseur (fournisseur_id,fournisseur_nom,fournisseur_rue,fournisseur_cp,fournisseur_ville,fournisseur_tel,fournisseur_nomcontact,fournisseur_prenomcontact) 
-VALUES (1,"Amet Orci PC","Appartement 402-3526 Massa Rue","88835","Cinisi","09 65 12 45 03","Riddle","Orlando"),
-       (2,"Integer Vulputate Risus Consulting","4509 Libero Chemin","91003","Mazenzele","07 12 88 74 07","Harper","Edan"),
-       (3,"Maecenas Malesuada Inc.","Appartement 975-1252 Odio. Impasse","55361","Washington","07 09 79 41 97","Dale","Lucius"),
-       (4,"Dictum Mi Ac Inc.","Appartement 245-2355 Auctor, Route","21846","Vandoeuvre-lès-Nancy","09 04 52 00 84","Holden","Dorian"),
-       (5,"Eleifend Vitae Industries","Appartement 536-5751 Neque Rue","12959","San Nicolás","08 04 60 78 18","Herman","Aurora"),
-       (6,"Nunc Quis Arcu Corporation","491-9263 Aenean Avenue","56602","Werder","08 30 54 07 77","Cruz","Alvin"),
-       (7,"A Sollicitudin Consulting","Appartement 142-1903 Libero Rue","23030","White Rock","02 08 93 32 17","Santana","Carissa"),
-       (8,"Pede Suspendisse Dui LLC","5319 Vel Impasse","33597","Conca Casale","04 94 93 11 70","Weeks","Imogene"),
-       (9,"Ac LLP","985-4900 Nunc Rd.","81603","Acireale","03 56 76 73 66","Greene","Kaden"),
-       (10,"Nunc In Associates","CP 707, 7848 Aliquam Rue","23124","Piancastagnaio","02 97 66 61 89","Mclaughlin","Porter"),
-       (11,"Ante Maecenas Mi Company","CP 384, 6634 Consequat Ave","61451","Silvan","03 76 85 27 29","Potter","Pamela"),
-       (12,"Sodales Elit Associates","CP 258, 5538 Id, Chemin","92254","Duncan","09 50 74 79 06","Ramos","Wyatt"),
-       (13,"Ligula LLC","410-7821 Fermentum Avenue","53877","Rebecq","05 20 62 95 62","Melton","Kirby"),
-       (14,"Enim Incorporated","CP 335, 9413 Tempor Chemin","46699","Chittoor","02 49 15 14 43","Paul","Rae"),
-       (15,"Nisi Sem Foundation","8400 Euismod Av.","40680","Harelbeke","03 17 66 20 36","Dudley","Baxter"),
-       (16,"Ut Consulting","2585 Facilisis. Rd.","67963","Bihar Sharif","05 70 60 78 37","Pittman","Rigel"),
-       (17,"Sed Pharetra Institute","7928 Neque Ave","58634","Camerino","07 65 17 44 66","Wynn","Cameron"),
-       (18,"Consequat Auctor Consulting","321-7248 Sed Rd.","76839","Rutland","06 28 82 66 31","Stanton","Garrett"),
-       (19,"Vestibulum Lorem Institute","CP 867, 668 Ornare. Route","85913","Vance","08 50 01 02 15","Burris","Raphael"),
-       (20,"In Tincidunt Limited","877-7388 Ornare Av.","32377","LaSalle","05 61 82 84 18","Best","Forrest");
+INSERT IGNORE 
+INTO fournisseur (fournisseur_id,fournisseur_nom,fournisseur_rue,fournisseur_cp,fournisseur_ville,fournisseur_tel,fournisseur_nomcontact,fournisseur_prenomcontact) 
+VALUES           (1,"Amet Orci PC","Appartement 402-3526 Massa Rue","88835","Cinisi","09 65 12 45 03","Riddle","Orlando"),
+                 (2,"Integer Vulputate Risus Consulting","4509 Libero Chemin","91003","Mazenzele","07 12 88 74 07","Harper","Edan"),
+                 (3,"Maecenas Malesuada Inc.","Appartement 975-1252 Odio. Impasse","55361","Washington","07 09 79 41 97","Dale","Lucius"),
+                 (4,"Dictum Mi Ac Inc.","Appartement 245-2355 Auctor, Route","21846","Vandoeuvre-lès-Nancy","09 04 52 00 84","Holden","Dorian"),
+                 (5,"Eleifend Vitae Industries","Appartement 536-5751 Neque Rue","12959","San Nicolás","08 04 60 78 18","Herman","Aurora"),
+                 (6,"Nunc Quis Arcu Corporation","491-9263 Aenean Avenue","56602","Werder","08 30 54 07 77","Cruz","Alvin"),
+                 (7,"A Sollicitudin Consulting","Appartement 142-1903 Libero Rue","23030","White Rock","02 08 93 32 17","Santana","Carissa"),
+                 (8,"Pede Suspendisse Dui LLC","5319 Vel Impasse","33597","Conca Casale","04 94 93 11 70","Weeks","Imogene"),
+                 (9,"Ac LLP","985-4900 Nunc Rd.","81603","Acireale","03 56 76 73 66","Greene","Kaden"),
+                 (10,"Nunc In Associates","CP 707, 7848 Aliquam Rue","23124","Piancastagnaio","02 97 66 61 89","Mclaughlin","Porter"),
+                 (11,"Ante Maecenas Mi Company","CP 384, 6634 Consequat Ave","61451","Silvan","03 76 85 27 29","Potter","Pamela"),
+                 (12,"Sodales Elit Associates","CP 258, 5538 Id, Chemin","92254","Duncan","09 50 74 79 06","Ramos","Wyatt"),
+                 (13,"Ligula LLC","410-7821 Fermentum Avenue","53877","Rebecq","05 20 62 95 62","Melton","Kirby"),
+                 (14,"Enim Incorporated","CP 335, 9413 Tempor Chemin","46699","Chittoor","02 49 15 14 43","Paul","Rae"),
+                 (15,"Nisi Sem Foundation","8400 Euismod Av.","40680","Harelbeke","03 17 66 20 36","Dudley","Baxter"),
+                 (16,"Ut Consulting","2585 Facilisis. Rd.","67963","Bihar Sharif","05 70 60 78 37","Pittman","Rigel"),
+                 (17,"Sed Pharetra Institute","7928 Neque Ave","58634","Camerino","07 65 17 44 66","Wynn","Cameron"),
+                 (18,"Consequat Auctor Consulting","321-7248 Sed Rd.","76839","Rutland","06 28 82 66 31","Stanton","Garrett"),
+                 (19,"Vestibulum Lorem Institute","CP 867, 668 Ornare. Route","85913","Vance","08 50 01 02 15","Burris","Raphael"),
+                 (20,"In Tincidunt Limited","877-7388 Ornare Av.","32377","LaSalle","05 61 82 84 18","Best","Forrest");
 -- //TODO TABLE CONTIENT
-
+INSERT IGNORE INTO contient (contient_livraison_id,contient_produit_id,contient_qteliv)
+VALUES (1,,),
+       (2,,),
 -- //TODO TABLE LIVRAISON
+INSERT IGNORE INTO `livraison`(livraison_id,livraison_num_bon,livraison_date,livraison_commande_id)
+VALUES (,,,)
+
 
 -- //TODO TABLE  COMMANDE
+INSERT IGNORE INTO `commande`(commande_id,commande_date,commande_reduc,commande_prixtot,commande_datereglem,commande_date_facture,commande_adresse_facturation,commande_adresse_livraison,commande_client_id)
+VALUES (1,'2018-01-15',0.10,,,,,,10),
+       (2,'2018-03-18',0.20,,,,,,12),
+       (3,'2018-05-21',0.30,,,,,,14),
+       (4,'2018-07-24',1,,,,,,16),
+       (5,'2018-09-27',0.50,,,,,,18),
+       (6,'2018-11-30',0.60,,,,,,20),
+       (7,'2018-13-22',0.70,,,,,,22);
 
 -- //TODO TABLE  SE COMPOSE DE 
-
+-- //FIXME cle primaire à confirmer
+INSERT IGNORE INTO `secomposede`(secomposede_commande_id,secomposede_produit_id,secomposede_qtitecommande)
+VALUES (1,3,1),
+       (2,4,2),
+       (3,5,3),
+       (4,6,4),
+       (5,7,5),
+       (6,8,6),
+       (7,9,7),
+       (8,10,8);
