@@ -1,0 +1,24 @@
+"produit_id","produit_nomcourt","produit_nom","produit_photo","produit_qtite","produit_prixHT","produit_qtiteale","produit_sousrub_id"
+1,C40BL,Yamaha - Guitare Classique C40BL Noir,../images/default_guit.jpg,5,130.00,2,20
+2,SG2019,GIBSON SG Standard Tribute 2019 - vintage cherry satin,../images/default_guit.jpg,6,856.00,2,18
+3,AE44II,APPLAUSE AE44II Mid Cutaway - natural,../images/default_guit.jpg,3,270.00,2,19
+4,AQUI1854,AQUILINA Shelby 4 Custom (#01854) - natural,../images/default_guit.jpg,3,3200.00,2,15
+5,CORTSJB6FX,CORT SJB6FX Fretless NAT +bag - natural,../images/default_guit.jpg,5,740.00,2,16
+6,FLPROU2,Flyht Pro Case Uni­versal 2 / 120cm,../images/default_guit.jpg,3,200.00,2,14
+7,AS50DC,MARSHALL AS50DC Acoustic - Racing Green,../images/default_guit.jpg,2,290.00,2,21
+8,FENDRS800,FENDER Rumble Stage 800,../images/default_guit.jpg,8,800.00,2,22
+9,BEYTGV35D,BEYERDYNAMIC TG V35d s Mic Set Pack micro avec pied,../images/default_guit.jpg,4,60.00,2,23
+10,MIXSQ7,ALLEN AND HEATH SQ-7 table de mixage,../images/default_guit.jpg,2,4000.00,2,24
+11,PEXL725PC,PEARLEXL725PC-248 black Smoke,../images/default_guit.jpg,2,500.00,2,1
+12,PMMCR22,"Pearl Master maple complete Rock 22"" satin natural burst",../images/default_guit.jpg,2,1200.00,2,2
+13,PEF20-B,"Pearl Export fusion 20"" High Voltage Blue",../images/default_guit.jpg,2,700.00,2,3
+14,PDMP4FJ18-Y,"Pearl DMP 4F JAZZ 18"" solid yellow",../images/default_guit.jpg,2,900.00,2,4
+15,PRJ18-R,"Pearl roadshow junior 18"" red wine",../images/default_guit.jpg,2,390.00,2,5
+16,GBE-BASS,GATOR GBE-BASS,../images/default_guit.jpg,2,23.00,2,13
+17,GBE-GUIT,GATOR GBE-GUIT,../images/default_guit.jpg,3,20.00,2,13
+18,MR500C,IBANEZ MR500C Road Tour Electric Guitar Case,../images/default_guit.jpg,3,150.00,2,17
+19,PRJ18-B,Pearl roadshow junior 18 pouces jet black,../images/default_guit.jpg,2,367.00,2,6
+20,EM-54T,Pearl Pearl e/Merge e/Traditional,../images/default_guit.jpg,2,3000.00,2,7
+21,PCF-DL10,Ebs Câble de patch guitare 10 cm,../images/default_guit.jpg,2,3.00,2,8
+22,EB-6048,Ernie Ball Cables instrument classic jack/jack 3m noir,../images/default_guit.jpg,5,17.00,2,9
+23,CCM20FM,Cordial Câble micro XLR 20 m,../images/default_guit.jpg,5,18.00,2,10

@@ -169,7 +169,7 @@ VALUES (,,,)
 
 
 -- //TODO TABLE  COMMANDE
-INSERT IGNORE INTO `commande`(commande_id,commande_date,commande_reduc,commande_prixtot,commande_datereglem,commande_date_facture,commande_adresse_facturation,commande_adresse_livraison,commande_client_id)
+INSERT IGNORE INTO `commande`(commande_id,commande_date,commande_reduc,commande_prixtot,commande_datereglem,commande_date_facture,commande_date_facture,commande_livraison_rue,commande_livraison_ville,commande_livraison_codepo,commande_facturation_rue,commande_facturation_ville ,commande_facturation_codepo,commande_client_id)
 VALUES (1,'2018-01-15',0.10,,,,,,10),
        (2,'2018-03-18',0.20,,,,,,12),
        (3,'2018-05-21',0.30,,,,,,14),
