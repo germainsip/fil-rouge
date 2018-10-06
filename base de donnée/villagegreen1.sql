@@ -154,13 +154,13 @@ CREATE TABLE appro(
 #------------------------------------------------------------
 # Table: se compose de  OK
 #------------------------------------------------------------
--- //FIXME prix de vente optionnel
+
 CREATE TABLE secomposede(
         secomposede_id            INT NOT NULL PRIMARY KEY
         secomposede_commande_id   INT NOT NULL,
         secomposede_produit_id    INT NOT NULL,
         secomposede_qtitecommande INT NOT NULL,
-        -- secomposede_prixvente     DECIMAL(7,2)NOT NULL,
+        secomposede_prixvente     DECIMAL(7,2)NOT NULL,
         
         FOREIGN KEY (secomposede_commande_id) REFERENCES commande(commande_id),
         FOREIGN KEY (secomposede_produit_id)  REFERENCES produit(produit_id)
