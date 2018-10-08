@@ -156,7 +156,7 @@ CREATE TABLE appro(
 #------------------------------------------------------------
 
 CREATE TABLE secomposede(
-        secomposede_id            INT NOT NULL PRIMARY KEY
+        secomposede_id            INT NOT NULL PRIMARY KEY,
         secomposede_commande_id   INT NOT NULL,
         secomposede_produit_id    INT NOT NULL,
         secomposede_qtitecommande INT NOT NULL,
