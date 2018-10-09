@@ -57,7 +57,7 @@ CREATE TABLE fournisseur(
         fournisseur_rue           Varchar (50) NOT NULL ,
         fournisseur_cp            Int NOT NULL ,
         fournisseur_ville         Varchar (50) NOT NULL ,
-        fournisseur_tel           Char (10) NOT NULL ,
+        fournisseur_tel           Char (14) NOT NULL ,
         fournisseur_nomcontact    Varchar (50) NOT NULL ,
         fournisseur_prenomcontact Varchar (50) NOT NULL
 );
