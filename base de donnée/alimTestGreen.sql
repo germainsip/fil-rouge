@@ -167,28 +167,21 @@ VALUES           (1,"Amet Orci PC","Appartement 402-3526 Massa Rue","88835","Cin
                  (20,"In Tincidunt Limited","877-7388 Ornare Av.","32377","LaSalle","05 61 82 84 18","Best","Forrest");
 
 
---  TABLE LIVRAISON
-INSERT IGNORE INTO `livraison`(livraison_id,livraison_num_bon,livraison_date,livraison_commande_id)
-VALUES (1,1,'2018-01-15',1),
-       (2,2,'2018-01-15',2),
-       (3,3,'2018-01-15',2);
---  TABLE CONTIENT
-INSERT INTO contient (contient_livraison_id,contient_produit_id,contient_qteliv)
-VALUES (1,3,1),
-       (2,4,1),
-       (3,4,1); 
+
 
 
 --   COMMANDE
+-- //FIXME verifier cohérence des données
 INSERT IGNORE 
-INTO `commande`(commande_id,commande_date,commande_reduc,commande_prixtot,commande_datereglem,commande_date_facture,commande_livraison_rue,commande_livraison_ville,commande_livraison_codepo,commande_facturation_rue,commande_facturation_ville ,commande_facturation_codepo,commande_client_id)
-VALUES (1,'2018-01-15',0.10,4270,'2018-01-15','2018-01-15','10 rue des corbak','AMIENS','80000','10 rue des corbak','AMIENS','80000',10),
-       (2,'2018-03-18',0.20,6400,'2018-01-15','2018-01-15',"7882 Luctus Rue","Lonquimay","45354","7882 Luctus Rue","Lonquimay","45354",12),
-       (3,'2018-05-21',0.30,2200,'2018-01-15','2018-01-15',"CP 394, 7305 Risus. Route","Lunel","68624","CP 394, 7305 Risus. Route","Lunel","68624",14),
-       (4,'2018-07-24',1,800,'2018-01-15','2018-01-15',"226-6532 Convallis Avenue","Bhilai","62534","226-6532 Convallis Avenue","Bhilai","62534",16),
-       (5,'2018-09-27',0.50,1450,'2018-01-15','2018-01-15',"3831 Eu Route","Portland","29059","3831 Eu Route","Portland","29059",18),
-       (6,'2018-11-30',0.60,4800,'2018-01-15','2018-01-15',"9969 Aliquet Route","Coevorden","40616","9969 Aliquet Route","Coevorden","40616",20),
-       (7,'2018-13-22',0.70,420,'2018-01-15','2018-01-15',"Appartement 691-6161 Non Rue","Jacksonville","94276","Appartement 691-6161 Non Rue","Jacksonville","94276",22);
+INTO `commande`(commande_id,commande_date,commande_reduc,commande_prixtot,commande_datereglem,commande_date_facture,commande_livraison_rue,commande_livraison_ville,
+commande_livraison_codepo,commande_facturation_rue,commande_facturation_ville ,commande_facturation_codepo,commande_etat,commande_client_id)
+VALUES (1,'2018-01-15',0.10,4270,'2018-01-15','2018-01-15','10 rue des corbak','AMIENS','80000','10 rue des corbak','AMIENS','80000','soldée',10),
+       (2,'2018-03-18',0.20,6400,'','2018-01-15',"7882 Luctus Rue","Lonquimay","45354","7882 Luctus Rue","Lonquimay","45354",'soldée',12),
+       (3,'2018-05-21',0.30,2200,'','2018-01-15',"CP 394, 7305 Risus. Route","Lunel","68624","CP 394, 7305 Risus. Route","Lunel","68624",'en préparation',14),
+       (4,'2018-07-24',1,800,'2018-01-15','2018-01-15',"226-6532 Convallis Avenue","Bhilai","62534","226-6532 Convallis Avenue","Bhilai","62534",'soldée',16),
+       (5,'2018-09-27',0.50,1450,'','',"3831 Eu Route","Portland","29059","3831 Eu Route","Portland","29059",'en préparation',18),
+       (6,'2018-11-30',0.60,4800,'2018-01-15','2018-01-15',"9969 Aliquet Route","Coevorden","40616","9969 Aliquet Route","Coevorden","40616",'en préparation',20),
+       (7,'2018-13-22',0.70,420,'2018-01-15','2018-01-15',"Appartement 691-6161 Non Rue","Jacksonville","94276","Appartement 691-6161 Non Rue","Jacksonville","94276",'soldée',22);
 
 -- TABLE  SE COMPOSE DE 
 
@@ -202,3 +195,15 @@ VALUES (1,1,3,1,270),
        (6,6,8,6,800),
        (7,7,9,7,60),
        (8,1,10,1,4000);
+
+
+--  TABLE LIVRAISON
+INSERT IGNORE INTO `livraison`(livraison_id,livraison_num_bon,livraison_date,livraison_commande_id)
+VALUES (1,1,'2018-01-15',1),
+       (2,2,'2018-01-15',2),
+       (3,3,'2018-01-15',2);
+--  TABLE CONTIENT
+INSERT INTO contient (contient_livraison_id,contient_produit_id,contient_qteliv)
+VALUES (1,3,1),
+       (2,4,1),
+       (3,4,1); 

@@ -105,7 +105,7 @@ CREATE TABLE commerciaux(
 
 CREATE TABLE commande(
         commande_id                           INT Auto_increment NOT NULL PRIMARY KEY,
-        commande_date                         Datetime NOT NULL ,
+        commande_date                         Date NOT NULL ,
         commande_reduc                        DECIMAL(3,2) NOT NULL ,
         commande_prixtot                      DECIMAL(7,2) NOT NULL ,
         commande_datereglem                   Date ,
