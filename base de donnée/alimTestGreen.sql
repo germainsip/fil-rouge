@@ -106,7 +106,7 @@ VALUES (1,'standard','le grand classique',1),
 -- TABLE PRODUIT
 -- //FIXME controle des sous rubriques
 INSERT IGNORE 
-INTO `Produit` (produit_id,produit_nomcourt,produit_nom,produit_photo,produit_qtite,produit_qtiteale,produit_prixHT,produit_sousrub_id)
+INTO `Produit` (produit_id,produit_nom_court,produit_nom,produit_photo,produit_qtite,produit_qtite_ale,produit_prix_HT,produit_sousrub_id)
 VALUES         (1,'C40BL','Yamaha - Guitare Classique C40BL Noir','../images/default_guit.jpg',5,2,130,20),
                (2,'SG2019','GIBSON SG Standard Tribute 2019 - vintage cherry satin','../images/default_guit.jpg',6,2,856,18),
                (3,'AE44II','APPLAUSE AE44II Mid Cutaway - natural','../images/default_guit.jpg',3,2,270,19),
@@ -135,7 +135,7 @@ VALUES         (1,'C40BL','Yamaha - Guitare Classique C40BL Noir','../images/def
 -- //TABLE APPRO
 
 INSERT IGNORE 
-INTO appro (appro_id,appro_fournisseur_id,appro_produit_id,appro_prixachat,appro_datelivr, appro_qtite)
+INTO appro (appro_id,appro_fournisseur_id,appro_produit_id,appro_prix_achat,appro_date_livr, appro_qtite)
 VALUES (1,5,3,200,'2018-05-23',2),
        (2,6,4,2800,'2018-06-26',2),
        (3,7,5,600,'2018-07-09',2),
@@ -144,7 +144,7 @@ VALUES (1,5,3,200,'2018-05-23',2),
 
 -- TABLE FOURNISSEUR
 INSERT IGNORE 
-INTO fournisseur (fournisseur_id,fournisseur_nom,fournisseur_rue,fournisseur_cp,fournisseur_ville,fournisseur_tel,fournisseur_nomcontact,fournisseur_prenomcontact) 
+INTO fournisseur (fournisseur_id,fournisseur_nom,fournisseur_rue,fournisseur_cp,fournisseur_ville,fournisseur_tel,fournisseur_nom_contact,fournisseur_prenom_contact) 
 VALUES           (1,"Amet Orci PC","Appartement 402-3526 Massa Rue","88835","Cinisi","09 65 12 45 03","Riddle","Orlando"),
                  (2,"Integer Vulputate Risus Consulting","4509 Libero Chemin","91003","Mazenzele","07 12 88 74 07","Harper","Edan"),
                  (3,"Maecenas Malesuada Inc.","Appartement 975-1252 Odio. Impasse","55361","Washington","07 09 79 41 97","Dale","Lucius"),
@@ -173,20 +173,20 @@ VALUES           (1,"Amet Orci PC","Appartement 402-3526 Massa Rue","88835","Cin
 --   COMMANDE
 -- //FIXME verifier cohérence des données
 INSERT IGNORE 
-INTO `commande`(commande_id,commande_date,commande_reduc,commande_prixtot,commande_datereglem,commande_date_facture,commande_livraison_rue,commande_livraison_ville,
+INTO `commande`(commande_id,commande_date,commande_reduc,commande_prix_tot,commande_date_reglem,commande_date_facture,commande_livraison_rue,commande_livraison_ville,
 commande_livraison_codepo,commande_facturation_rue,commande_facturation_ville ,commande_facturation_codepo,commande_etat,commande_client_id)
 VALUES (1,'2018-01-15',0.10,4270,'2018-01-15','2018-01-15','10 rue des corbak','AMIENS','80000','10 rue des corbak','AMIENS','80000','soldée',10),
-       (2,'2018-03-18',0.20,6400,'','2018-01-15',"7882 Luctus Rue","Lonquimay","45354","7882 Luctus Rue","Lonquimay","45354",'soldée',12),
+       (2,'2018-03-18',0.20,6400,'2018-01-15','2018-01-15',"7882 Luctus Rue","Lonquimay","45354","7882 Luctus Rue","Lonquimay","45354",'soldée',12),
        (3,'2018-05-21',0.30,2200,'','2018-01-15',"CP 394, 7305 Risus. Route","Lunel","68624","CP 394, 7305 Risus. Route","Lunel","68624",'en préparation',14),
        (4,'2018-07-24',1,800,'2018-01-15','2018-01-15',"226-6532 Convallis Avenue","Bhilai","62534","226-6532 Convallis Avenue","Bhilai","62534",'soldée',16),
        (5,'2018-09-27',0.50,1450,'','',"3831 Eu Route","Portland","29059","3831 Eu Route","Portland","29059",'en préparation',18),
        (6,'2018-11-30',0.60,4800,'2018-01-15','2018-01-15',"9969 Aliquet Route","Coevorden","40616","9969 Aliquet Route","Coevorden","40616",'en préparation',20),
-       (7,'2018-13-22',0.70,420,'2018-01-15','2018-01-15',"Appartement 691-6161 Non Rue","Jacksonville","94276","Appartement 691-6161 Non Rue","Jacksonville","94276",'soldée',22);
+       (7,'2018-12-22',0.70,420,'2018-01-15','2018-01-15',"Appartement 691-6161 Non Rue","Jacksonville","94276","Appartement 691-6161 Non Rue","Jacksonville","94276",'soldée',22);
 
 -- TABLE  SE COMPOSE DE 
 
 INSERT IGNORE 
-INTO `secomposede`(secomposede_id,secomposede_commande_id,secomposede_produit_id,secomposede_qtitecommande,secomposede_prixvente)
+INTO `secomposede`(secomposede_id,secomposede_commande_id,secomposede_produit_id,secomposede_qtite_commande,secomposede_prix_vente)
 VALUES (1,1,3,1,270),
        (2,2,4,2,3200),
        (3,3,5,3,740),
@@ -203,7 +203,7 @@ VALUES (1,1,'2018-01-15',1),
        (2,2,'2018-01-15',2),
        (3,3,'2018-01-15',2);
 --  TABLE CONTIENT
-INSERT INTO contient (contient_livraison_id,contient_produit_id,contient_qteliv)
+INSERT INTO contient (contient_livraison_id,contient_produit_id,contient_qtite_liv)
 VALUES (1,3,1),
        (2,4,1),
        (3,4,1); 

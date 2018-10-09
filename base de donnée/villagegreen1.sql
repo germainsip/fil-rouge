@@ -36,12 +36,12 @@ CREATE TABLE sous_rubrique(
 
 CREATE TABLE Produit(
         produit_id            Int  Auto_increment  NOT NULL PRIMARY KEY,
-        produit_nomcourt      Char (50) NOT NULL ,
+        produit_nom_court      Char (50) NOT NULL ,
         produit_nom           Varchar (255) NOT NULL ,
         produit_photo         Varchar (255) NOT NULL ,
         produit_qtite         Int NOT NULL ,
-        produit_prixHT        DECIMAL(7,2) NOT NULL ,
-        produit_qtiteale      Int NOT NULL ,
+        produit_prix_HT        DECIMAL(7,2) NOT NULL ,
+        produit_qtite_ale      Int NOT NULL ,
         produit_sousrub_id    Int NOT NULL,
         FOREIGN KEY (produit_sousrub_id) REFERENCES sous_rubrique(sousrub_id)
 	);
@@ -58,8 +58,8 @@ CREATE TABLE fournisseur(
         fournisseur_cp            Int NOT NULL ,
         fournisseur_ville         Varchar (50) NOT NULL ,
         fournisseur_tel           Char (14) NOT NULL ,
-        fournisseur_nomcontact    Varchar (50) NOT NULL ,
-        fournisseur_prenomcontact Varchar (50) NOT NULL
+        fournisseur_nom_contact    Varchar (50) NOT NULL ,
+        fournisseur_prenom_contact Varchar (50) NOT NULL
 );
 
 
@@ -107,8 +107,8 @@ CREATE TABLE commande(
         commande_id                           INT Auto_increment NOT NULL PRIMARY KEY,
         commande_date                         Date NOT NULL ,
         commande_reduc                        DECIMAL(3,2) NOT NULL ,
-        commande_prixtot                      DECIMAL(7,2) NOT NULL ,
-        commande_datereglem                   Date ,
+        commande_prix_tot                      DECIMAL(7,2) NOT NULL ,
+        commande_date_reglem                   Date ,
         commande_date_facture                 Date NOT NULL ,       
         commande_livraison_rue                Varchar (50) NOT NULL ,
         commande_livraison_ville              Varchar (50) NOT NULL ,
@@ -142,9 +142,9 @@ CREATE TABLE livraison(
 CREATE TABLE appro(
         appro_fournisseur_id  Int NOT NULL ,
         appro_produit_id      Int NOT NULL ,
-        appro_prixachat       DECIMAL(7,2) NOT NULL ,
-        appro_datecom         Date NOT NULL ,
-        appro_datelivr        Date NOT NULL ,
+        appro_prix_achat       DECIMAL(7,2) NOT NULL ,
+        appro_date_com         Date NOT NULL ,
+        appro_date_livr        Date NOT NULL ,
         appro_qtite           Int NOT NULL,
         appro_id              Int NOT NULL PRIMARY KEY,
         -- PRIMARY KEY (appro_fournisseur_id,appro_produit_id),
@@ -161,8 +161,8 @@ CREATE TABLE secomposede(
         secomposede_id            INT NOT NULL PRIMARY KEY,
         secomposede_commande_id   INT NOT NULL,
         secomposede_produit_id    INT NOT NULL,
-        secomposede_qtitecommande INT NOT NULL,
-        secomposede_prixvente     DECIMAL(7,2)NOT NULL,
+        secomposede_qtite_commande INT NOT NULL,
+        secomposede_prix_vente     DECIMAL(7,2)NOT NULL,
         
         FOREIGN KEY (secomposede_commande_id) REFERENCES commande(commande_id),
         FOREIGN KEY (secomposede_produit_id)  REFERENCES produit(produit_id)
@@ -175,7 +175,7 @@ CREATE TABLE secomposede(
 CREATE TABLE contient (
         contient_livraison_id INT,
         contient_produit_id INT,
-        contient_qteliv INT,
+        contient_qtite_liv INT,
         PRIMARY KEY (contient_livraison_id,contient_produit_id),
         FOREIGN KEY (contient_livraison_id) REFERENCES livraison(livraison_id),
         FOREIGN KEY (contient_produit_id) REFERENCES produit (produit_id)
