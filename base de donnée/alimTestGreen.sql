@@ -172,7 +172,7 @@ INSERT IGNORE INTO `livraison`(livraison_id,livraison_num_bon,livraison_date,liv
 VALUES (1,1,'2018-01-15',1),
        (2,2,'2018-01-15',2),
        (3,3,'2018-01-15',2);
--- //TODO TABLE CONTIENT
+--  TABLE CONTIENT
 INSERT INTO contient (contient_livraison_id,contient_produit_id,contient_qteliv)
 VALUES (1,3,1),
        (2,4,1),
