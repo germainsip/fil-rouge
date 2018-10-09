@@ -1,10 +1,18 @@
 Fil rouge
 Todo:
-  ☐ alimenter village @started(18-09-27 15:58)
-  ☐ dictionnaire de données @started(18-09-23 15:42)
+  ✔ alimenter village @started(18-09-27 15:58) @done(18-10-08 13:26) @lasted(1w3d21h28m56s)
+  ✔ dictionnaire de données @started(18-10-08 13:27) @done(18-10-08 16:43) @lasted(3h16m25s)
   ☐ mcd
-  ☐ mdp
-  ✔ script pour village green @started(18-09-23 15:30) @done(18-09-24 10:15) @lasted(18h45m11s)
+  ✔ mdp @done(18-10-08 13:27)
+  ✔ script pour village green @started(18-09-23 15:30) @done(18-10-08 13:27) @lasted(2w21h57m15s)
+  
+  ✔ Créer une nouvelle commande @done(18-10-09 09:14)
+  ✔ Ajouter des produits dans la commande @done(18-10-09 09:14)
+  ☐ Connaître l’état de la commande (saisie, annulée, en préparation, expédiée,
+  ☐ facturée, retard de paiement, soldée)
+  ☐ Consulter les clients en retard de paiement à une date donnée
+  ☐ Modifier ou annuler la commande avant qu’elle ne soit en préparation
+  ☐ Les commandes seront saisies par le biais d’une interface accessible par internet
 
 
 
