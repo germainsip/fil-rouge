@@ -100,21 +100,23 @@ CREATE TABLE commerciaux(
 
 #------------------------------------------------------------
 # Table: commande  OK
+-- //FIXME champ etat et date de réglement dans données test
 #------------------------------------------------------------
 
 CREATE TABLE commande(
-        commande_id                  INT Auto_increment NOT NULL PRIMARY KEY,
-        commande_date                Datetime NOT NULL ,
-        commande_reduc               DECIMAL(3,2) NOT NULL ,
-        commande_prixtot             DECIMAL(7,2) NOT NULL ,
-        commande_datereglem          Date NOT NULL ,
-        commande_date_facture        Date NOT NULL ,       
-        commande_livraison_rue              Varchar (50) NOT NULL ,
-        commande_livraison_ville            Varchar (50) NOT NULL ,
-        commande_livraison_codepo           CHAR(5) NOT NULL ,
+        commande_id                           INT Auto_increment NOT NULL PRIMARY KEY,
+        commande_date                         Datetime NOT NULL ,
+        commande_reduc                        DECIMAL(3,2) NOT NULL ,
+        commande_prixtot                      DECIMAL(7,2) NOT NULL ,
+        commande_datereglem                   Date ,
+        commande_date_facture                 Date NOT NULL ,       
+        commande_livraison_rue                Varchar (50) NOT NULL ,
+        commande_livraison_ville              Varchar (50) NOT NULL ,
+        commande_livraison_codepo             CHAR(5) NOT NULL ,
         commande_facturation_rue              Varchar (50) NOT NULL ,
         commande_facturation_ville            Varchar (50) NOT NULL ,
         commande_facturation_codepo           CHAR(5) NOT NULL ,
+        commande_etat                         VARCHAR(10),
         commande_client_id                    Int NOT NULL,
         FOREIGN KEY (commande_client_id) REFERENCES client(client_id)
 );
@@ -126,7 +128,7 @@ CREATE TABLE commande(
 
 CREATE TABLE livraison(
         livraison_id            Int  Auto_increment  NOT NULL PRIMARY KEY ,
-        livraison_num_bon       Varchar (50) NOT NULL ,
+        livraison_num_bon       INT(11) NOT NULL ,
         livraison_date          Date NOT NULL ,
         livraison_commande_id   INT NOT NULL,
         FOREIGN KEY (livraison_commande_id) REFERENCES commande(commande_id)
