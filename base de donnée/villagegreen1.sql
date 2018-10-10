@@ -131,6 +131,7 @@ CREATE TABLE livraison(
         livraison_num_bon       INT(11) NOT NULL ,
         livraison_date          Date NOT NULL ,
         livraison_commande_id   INT NOT NULL,
+        livraison_etat          VARCHAR (10),
         FOREIGN KEY (livraison_commande_id) REFERENCES commande(commande_id)
 );
 

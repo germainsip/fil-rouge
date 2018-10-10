@@ -1,0 +1,1 @@
+mysqldump --user=root --password=Grm1 --databases villagegreen > /Users/germain/Www/backup/backup_village1.sql

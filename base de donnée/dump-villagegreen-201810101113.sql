@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.3.9-MariaDB, for osx10.13 (x86_64)
+-- MySQL dump 10.16  Distrib 10.2.14-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: villagegreen
 -- ------------------------------------------------------
--- Server version	10.3.9-MariaDB
+-- Server version	10.2.14-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,46 +14,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Current Database: `villagegreen`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `villagegreen` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-
-USE `villagegreen`;
-
---
--- Table structure for table `Produit`
---
-
-DROP TABLE IF EXISTS `Produit`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Produit` (
-  `produit_id` int(11) NOT NULL AUTO_INCREMENT,
-  `produit_nom_court` char(50) NOT NULL,
-  `produit_nom` varchar(255) NOT NULL,
-  `produit_photo` varchar(255) NOT NULL,
-  `produit_qtite` int(11) NOT NULL,
-  `produit_prix_HT` decimal(7,2) NOT NULL,
-  `produit_qtite_ale` int(11) NOT NULL,
-  `produit_sousrub_id` int(11) NOT NULL,
-  PRIMARY KEY (`produit_id`),
-  KEY `produit_sousrub_id` (`produit_sousrub_id`),
-  CONSTRAINT `produit_ibfk_1` FOREIGN KEY (`produit_sousrub_id`) REFERENCES `sous_rubrique` (`sousrub_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Produit`
---
-
-LOCK TABLES `Produit` WRITE;
-/*!40000 ALTER TABLE `Produit` DISABLE KEYS */;
-INSERT INTO `Produit` VALUES (1,'C40BL','Yamaha - Guitare Classique C40BL Noir','../images/default_guit.jpg',5,130.00,2,20),(2,'SG2019','GIBSON SG Standard Tribute 2019 - vintage cherry satin','../images/default_guit.jpg',6,856.00,2,18),(3,'AE44II','APPLAUSE AE44II Mid Cutaway - natural','../images/default_guit.jpg',3,270.00,2,19),(4,'AQUI1854','AQUILINA Shelby 4 Custom (#01854) - natural','../images/default_guit.jpg',3,3200.00,2,15),(5,'CORTSJB6FX','CORT SJB6FX Fretless NAT +bag - natural','../images/default_guit.jpg',5,740.00,2,16),(6,'FLPROU2','Flyht Pro Case Uni­versal 2 / 120cm','../images/default_guit.jpg',3,200.00,2,14),(7,'AS50DC','MARSHALL AS50DC Acoustic - Racing Green','../images/default_guit.jpg',2,290.00,2,21),(8,'FENDRS800','FENDER Rumble Stage 800','../images/default_guit.jpg',8,800.00,2,22),(9,'BEYTGV35D','BEYERDYNAMIC TG V35d s Mic Set Pack micro avec pied','../images/default_guit.jpg',4,60.00,2,23),(10,'MIXSQ7','ALLEN AND HEATH SQ-7 table de mixage','../images/default_guit.jpg',2,4000.00,2,24),(11,'PEXL725PC','PEARLEXL725PC-248 black Smoke','../images/default_guit.jpg',2,500.00,2,1),(12,'PMMCR22','Pearl Master maple complete Rock 22\" satin natural burst','../images/default_guit.jpg',2,1200.00,2,2),(13,'PEF20-B','Pearl Export fusion 20\" High Voltage Blue','../images/default_guit.jpg',2,700.00,2,3),(14,'PDMP4FJ18-Y','Pearl DMP 4F JAZZ 18\" solid yellow','../images/default_guit.jpg',2,900.00,2,4),(15,'PRJ18-R','Pearl roadshow junior 18\" red wine','../images/default_guit.jpg',2,390.00,2,5),(16,'GBE-BASS','GATOR GBE-BASS','../images/default_guit.jpg',2,23.00,2,13),(17,'GBE-GUIT','GATOR GBE-GUIT','../images/default_guit.jpg',3,20.00,2,13),(18,'MR500C','IBANEZ MR500C Road Tour Electric Guitar Case','../images/default_guit.jpg',3,150.00,2,17),(19,'PRJ18-B','Pearl roadshow junior 18 pouces jet black','../images/default_guit.jpg',2,367.00,2,6),(20,'EM-54T','Pearl Pearl e/Merge e/Traditional','../images/default_guit.jpg',2,3000.00,2,7),(21,'PCF-DL10','Ebs Câble de patch guitare 10 cm','../images/default_guit.jpg',2,3.00,2,8),(22,'EB-6048','Ernie Ball Cables instrument classic jack/jack 3m noir','../images/default_guit.jpg',5,17.00,2,9),(23,'CCM20FM','Cordial Câble micro XLR 20 m','../images/default_guit.jpg',5,18.00,2,10);
-/*!40000 ALTER TABLE `Produit` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `appro`
@@ -75,7 +35,7 @@ CREATE TABLE `appro` (
   KEY `appro_produit_id` (`appro_produit_id`),
   CONSTRAINT `appro_ibfk_1` FOREIGN KEY (`appro_fournisseur_id`) REFERENCES `fournisseur` (`fournisseur_id`),
   CONSTRAINT `appro_ibfk_2` FOREIGN KEY (`appro_produit_id`) REFERENCES `produit` (`produit_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +44,6 @@ CREATE TABLE `appro` (
 
 LOCK TABLES `appro` WRITE;
 /*!40000 ALTER TABLE `appro` DISABLE KEYS */;
-INSERT INTO `appro` VALUES (5,3,200.00,'0000-00-00','2018-05-23',2,1),(6,4,2800.00,'0000-00-00','2018-06-26',2,2),(7,5,600.00,'0000-00-00','2018-07-09',2,3),(8,6,100.00,'0000-00-00','2018-08-22',2,4),(9,7,200.00,'0000-00-00','2018-09-09',2,5);
 /*!40000 ALTER TABLE `appro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,7 +67,7 @@ CREATE TABLE `client` (
   `client_siret` char(15) DEFAULT NULL,
   `client_commerciaux_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`client_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,7 +105,7 @@ CREATE TABLE `commande` (
   PRIMARY KEY (`commande_id`),
   KEY `commande_client_id` (`commande_client_id`),
   CONSTRAINT `commande_ibfk_1` FOREIGN KEY (`commande_client_id`) REFERENCES `client` (`client_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,7 +114,7 @@ CREATE TABLE `commande` (
 
 LOCK TABLES `commande` WRITE;
 /*!40000 ALTER TABLE `commande` DISABLE KEYS */;
-INSERT INTO `commande` VALUES (1,'2018-01-15',0.10,4270.00,'2018-01-15','2018-01-15','10 rue des corbak','AMIENS','80000','10 rue des corbak','AMIENS','80000','soldée',10),(2,'2018-03-18',0.20,6400.00,'0000-00-00','2018-01-15','7882 Luctus Rue','Lonquimay','45354','7882 Luctus Rue','Lonquimay','45354','soldée',12),(3,'2018-05-21',0.30,2200.00,'0000-00-00','2018-01-15','CP 394, 7305 Risus. Route','Lunel','68624','CP 394, 7305 Risus. Route','Lunel','68624','en prépara',14),(4,'2018-07-24',1.00,800.00,'2018-01-15','2018-01-15','226-6532 Convallis Avenue','Bhilai','62534','226-6532 Convallis Avenue','Bhilai','62534','soldée',16),(5,'2018-09-27',0.50,1450.00,'0000-00-00','0000-00-00','3831 Eu Route','Portland','29059','3831 Eu Route','Portland','29059','en prépara',18),(6,'2018-11-30',0.60,4800.00,'2018-01-15','2018-01-15','9969 Aliquet Route','Coevorden','40616','9969 Aliquet Route','Coevorden','40616','en prépara',20),(7,'0000-00-00',0.70,420.00,'2018-01-15','2018-01-15','Appartement 691-6161 Non Rue','Jacksonville','94276','Appartement 691-6161 Non Rue','Jacksonville','94276','soldée',22);
+INSERT INTO `commande` VALUES (1,'2018-01-15',0.10,4270.00,'2018-01-15','2018-01-15','10 rue des corbak','AMIENS','80000','10 rue des corbak','AMIENS','80000','en cours',10),(2,'2018-03-18',0.20,6400.00,'2018-01-15','2018-01-15','7882 Luctus Rue','Lonquimay','45354','7882 Luctus Rue','Lonquimay','45354','soldée',12),(3,'2018-05-21',0.30,2200.00,'0000-00-00','2018-01-15','CP 394, 7305 Risus. Route','Lunel','68624','CP 394, 7305 Risus. Route','Lunel','68624','en prépara',14),(4,'2018-07-24',1.00,800.00,'2018-01-15','2018-01-15','226-6532 Convallis Avenue','Bhilai','62534','226-6532 Convallis Avenue','Bhilai','62534','soldée',16),(5,'2018-09-27',0.50,1450.00,'0000-00-00','0000-00-00','3831 Eu Route','Portland','29059','3831 Eu Route','Portland','29059','en prépara',18),(6,'2018-11-30',0.60,4800.00,'2018-01-15','2018-01-15','9969 Aliquet Route','Coevorden','40616','9969 Aliquet Route','Coevorden','40616','en prépara',20),(7,'2018-12-22',0.70,420.00,'2018-01-15','2018-01-15','Appartement 691-6161 Non Rue','Jacksonville','94276','Appartement 691-6161 Non Rue','Jacksonville','94276','soldée',22);
 /*!40000 ALTER TABLE `commande` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,7 +132,7 @@ CREATE TABLE `commerciaux` (
   `commerciaux_tel` char(14) NOT NULL,
   `commerciaux_mail` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`commerciaux_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,7 +160,7 @@ CREATE TABLE `contient` (
   KEY `contient_produit_id` (`contient_produit_id`),
   CONSTRAINT `contient_ibfk_1` FOREIGN KEY (`contient_livraison_id`) REFERENCES `livraison` (`livraison_id`),
   CONSTRAINT `contient_ibfk_2` FOREIGN KEY (`contient_produit_id`) REFERENCES `produit` (`produit_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -231,7 +190,7 @@ CREATE TABLE `fournisseur` (
   `fournisseur_nom_contact` varchar(50) NOT NULL,
   `fournisseur_prenom_contact` varchar(50) NOT NULL,
   PRIMARY KEY (`fournisseur_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -256,10 +215,11 @@ CREATE TABLE `livraison` (
   `livraison_num_bon` int(11) NOT NULL,
   `livraison_date` date NOT NULL,
   `livraison_commande_id` int(11) NOT NULL,
+  `livraison_etat` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`livraison_id`),
   KEY `livraison_commande_id` (`livraison_commande_id`),
   CONSTRAINT `livraison_ibfk_1` FOREIGN KEY (`livraison_commande_id`) REFERENCES `commande` (`commande_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,8 +228,40 @@ CREATE TABLE `livraison` (
 
 LOCK TABLES `livraison` WRITE;
 /*!40000 ALTER TABLE `livraison` DISABLE KEYS */;
-INSERT INTO `livraison` VALUES (1,1,'2018-01-15',1),(2,2,'2018-01-15',2),(3,3,'2018-01-15',2);
+INSERT INTO `livraison` VALUES (1,1,'2018-10-11',1,'en cours'),(2,2,'2018-01-15',2,'livrée'),(3,3,'2018-10-15',2,'en prépara');
 /*!40000 ALTER TABLE `livraison` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `produit`
+--
+
+DROP TABLE IF EXISTS `produit`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `produit` (
+  `produit_id` int(11) NOT NULL AUTO_INCREMENT,
+  `produit_nom_court` char(50) NOT NULL,
+  `produit_nom` varchar(255) NOT NULL,
+  `produit_photo` varchar(255) NOT NULL,
+  `produit_qtite` int(11) NOT NULL,
+  `produit_prix_HT` decimal(7,2) NOT NULL,
+  `produit_qtite_ale` int(11) NOT NULL,
+  `produit_sousrub_id` int(11) NOT NULL,
+  PRIMARY KEY (`produit_id`),
+  KEY `produit_sousrub_id` (`produit_sousrub_id`),
+  CONSTRAINT `produit_ibfk_1` FOREIGN KEY (`produit_sousrub_id`) REFERENCES `sous_rubrique` (`sousrub_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `produit`
+--
+
+LOCK TABLES `produit` WRITE;
+/*!40000 ALTER TABLE `produit` DISABLE KEYS */;
+INSERT INTO `produit` VALUES (1,'C40BL','Yamaha - Guitare Classique C40BL Noir','../images/default_guit.jpg',5,130.00,2,20),(2,'SG2019','GIBSON SG Standard Tribute 2019 - vintage cherry satin','../images/default_guit.jpg',6,856.00,2,18),(3,'AE44II','APPLAUSE AE44II Mid Cutaway - natural','../images/default_guit.jpg',3,270.00,2,19),(4,'AQUI1854','AQUILINA Shelby 4 Custom (#01854) - natural','../images/default_guit.jpg',3,3200.00,2,15),(5,'CORTSJB6FX','CORT SJB6FX Fretless NAT +bag - natural','../images/default_guit.jpg',5,740.00,2,16),(6,'FLPROU2','Flyht Pro Case Uni­versal 2 / 120cm','../images/default_guit.jpg',3,200.00,2,14),(7,'AS50DC','MARSHALL AS50DC Acoustic - Racing Green','../images/default_guit.jpg',2,290.00,2,21),(8,'FENDRS800','FENDER Rumble Stage 800','../images/default_guit.jpg',8,800.00,2,22),(9,'BEYTGV35D','BEYERDYNAMIC TG V35d s Mic Set Pack micro avec pied','../images/default_guit.jpg',4,60.00,2,23),(10,'MIXSQ7','ALLEN AND HEATH SQ-7 table de mixage','../images/default_guit.jpg',2,4000.00,2,24),(11,'PEXL725PC','PEARLEXL725PC-248 black Smoke','../images/default_guit.jpg',2,500.00,2,1),(12,'PMMCR22','Pearl Master maple complete Rock 22\" satin natural burst','../images/default_guit.jpg',2,1200.00,2,2),(13,'PEF20-B','Pearl Export fusion 20\" High Voltage Blue','../images/default_guit.jpg',2,700.00,2,3),(14,'PDMP4FJ18-Y','Pearl DMP 4F JAZZ 18\" solid yellow','../images/default_guit.jpg',2,900.00,2,4),(15,'PRJ18-R','Pearl roadshow junior 18\" red wine','../images/default_guit.jpg',2,390.00,2,5),(16,'GBE-BASS','GATOR GBE-BASS','../images/default_guit.jpg',2,23.00,2,13),(17,'GBE-GUIT','GATOR GBE-GUIT','../images/default_guit.jpg',3,20.00,2,13),(18,'MR500C','IBANEZ MR500C Road Tour Electric Guitar Case','../images/default_guit.jpg',3,150.00,2,17),(19,'PRJ18-B','Pearl roadshow junior 18 pouces jet black','../images/default_guit.jpg',2,367.00,2,6),(20,'EM-54T','Pearl Pearl e/Merge e/Traditional','../images/default_guit.jpg',2,3000.00,2,7),(21,'PCF-DL10','Ebs Câble de patch guitare 10 cm','../images/default_guit.jpg',2,3.00,2,8),(22,'EB-6048','Ernie Ball Cables instrument classic jack/jack 3m noir','../images/default_guit.jpg',5,17.00,2,9),(23,'CCM20FM','Cordial Câble micro XLR 20 m','../images/default_guit.jpg',5,18.00,2,10);
+/*!40000 ALTER TABLE `produit` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -311,7 +303,7 @@ CREATE TABLE `rubrique` (
   `rubrique_nom` varchar(255) NOT NULL,
   `rubrique_desc` varchar(500) NOT NULL,
   PRIMARY KEY (`rubrique_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -342,7 +334,7 @@ CREATE TABLE `secomposede` (
   KEY `secomposede_produit_id` (`secomposede_produit_id`),
   CONSTRAINT `secomposede_ibfk_1` FOREIGN KEY (`secomposede_commande_id`) REFERENCES `commande` (`commande_id`),
   CONSTRAINT `secomposede_ibfk_2` FOREIGN KEY (`secomposede_produit_id`) REFERENCES `produit` (`produit_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -370,7 +362,7 @@ CREATE TABLE `sous_rubrique` (
   PRIMARY KEY (`sousrub_id`),
   KEY `sousrub_rubrique_id` (`sousrub_rubrique_id`),
   CONSTRAINT `sous_rubrique_ibfk_1` FOREIGN KEY (`sousrub_rubrique_id`) REFERENCES `rubrique` (`rubrique_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -397,7 +389,7 @@ CREATE TABLE `suivipar` (
   KEY `suivipar_commerciaux_id` (`suivipar_commerciaux_id`),
   CONSTRAINT `suivipar_ibfk_1` FOREIGN KEY (`suivipar_client_id`) REFERENCES `client` (`client_id`),
   CONSTRAINT `suivipar_ibfk_2` FOREIGN KEY (`suivipar_commerciaux_id`) REFERENCES `commerciaux` (`commerciaux_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -410,10 +402,70 @@ LOCK TABLES `suivipar` WRITE;
 UNLOCK TABLES;
 
 --
--- Current Database: `villagegreen`
+-- Dumping routines for database 'villagegreen'
 --
-
-USE `villagegreen`;
+/*!50003 DROP PROCEDURE IF EXISTS `CA_Annuel` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'IGNORE_SPACE,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CA_Annuel`(annee char(4))
+BEGIN
+    SELECT sum(commande_prix_tot) as CA
+    FROM `commande`
+    WHERE commande_etat = 'soldée' AND YEAR(commande_date_reglem)=annee;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `client_commande_liste` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'IGNORE_SPACE,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `client_commande_liste`(ref_client INT(11))
+BEGIN
+    SELECT commande_id AS 'REF commande', commande_date AS 'DATE', commande_client_id AS 'REF Client', round(commande_prix_tot*commande_reduc,2) AS 'Montant'
+    FROM `commande` WHERE commande_client_id=ref_client;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `commande_encours` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'IGNORE_SPACE,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `commande_encours`()
+BEGIN
+    select *
+    from `commande` 
+    where commande_etat='en cours';
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Final view structure for view `produit_fournisseur`
@@ -424,9 +476,9 @@ USE `villagegreen`;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_general_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `produit_fournisseur` AS select `produit`.`produit_nom_court` AS `ref`,`produit`.`produit_nom` AS `nom`,`produit`.`produit_photo` AS `photo`,`produit`.`produit_qtite` AS `en stock`,`produit`.`produit_prix_HT` AS `prix HT`,`produit`.`produit_qtite_ale` AS `quantité alerte`,`produit`.`produit_sousrub_id` AS `sous rubrique`,`appro`.`appro_prix_achat` AS `prix fournisseur`,`fournisseur`.`fournisseur_nom` AS `Fournisseur`,`fournisseur`.`fournisseur_rue` AS `Adresse`,`fournisseur`.`fournisseur_cp` AS `code postal`,`fournisseur`.`fournisseur_ville` AS `ville`,`fournisseur`.`fournisseur_tel` AS `telephone`,`fournisseur`.`fournisseur_nom_contact` AS `contact`,`fournisseur`.`fournisseur_prenom_contact` AS `prenom` from ((`produit` join `appro` on(`appro`.`appro_produit_id` = `produit`.`produit_id`)) join `fournisseur` on(`fournisseur`.`fournisseur_id` = `appro`.`appro_fournisseur_id`)) */;
@@ -443,4 +495,4 @@ USE `villagegreen`;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-09 15:05:38
+-- Dump completed on 2018-10-10 11:13:28
