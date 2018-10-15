@@ -100,7 +100,6 @@ CREATE TABLE commerciaux(
 
 #------------------------------------------------------------
 # Table: commande  OK
--- //FIXME champ etat et date de réglement dans données test
 #------------------------------------------------------------
 
 CREATE TABLE commande(
