@@ -1,0 +1,11 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.bandeau {
+    -fx-background-image: url("/germain/villagegreen2/ui/images/background.png")
+}
