@@ -10,16 +10,16 @@
  */
 package germain.villagegreen2.ui.addclient;
 
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.validation.RequiredFieldValidator;
+import com.jfoenix.validation.RegexValidator;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
 /**
@@ -29,6 +29,7 @@ import javafx.scene.layout.HBox;
  */
 public class ClientAddController implements Initializable {
 
+    boolean flagNomField;
     @FXML
     private HBox bandeau;
     @FXML
@@ -42,29 +43,35 @@ public class ClientAddController implements Initializable {
     @FXML
     private JFXTextField CPField;
     @FXML
-    private JFXTextField CPField1;
+    private ImageView logo;
     @FXML
-    private JFXTextField VilleField1;
+    private JFXTextField TelField;
     @FXML
-    private JFXTextField PrenomField1;
+    private JFXTextField MailField;
+    @FXML
+    private JFXComboBox<?> typeBox;
+    @FXML
+    private JFXTextField siretField;
+    @FXML
+    private JFXComboBox<?> CommBox;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        String patternNPV = "^\\p{IsAlphabetic}+[ -]*\\p{IsAlphabetic}*$";
-                Pattern pNom = Pattern.compile(patternNPV);
-                Matcher mNom = pNom.matcher(NomField.getText());
-        RequiredFieldValidator validator = new RequiredFieldValidator();
+        // def des validateur regex
+        RegexValidator validatorNPV = new RegexValidator("Champ non conformes");
+        validatorNPV.setRegexPattern("^\\p{IsAlphabetic}+[ -]*\\p{IsAlphabetic}*$");
+        RegexValidator validatorCP = new RegexValidator("Code postal non conforme");
+        validatorCP.setRegexPattern("^\\d{5}$");
+        //affectation des validateurs
+        NomField.getValidators().add(validatorNPV);
+        PrenomField.getValidators().add(validatorNPV);
+        VilleField.getValidators().add(validatorNPV);
+        CPField.getValidators().add(validatorCP);
 
-        NomField.getValidators().add(validator);
-        validator.setMessage("Rien à insérer!!!");
-        PrenomField.getValidators().add(validator);
-        validator.setMessage("Rien à insérer!!!");
-
-        //Matcher mNom = pNom.matcher(NomField.getText());
+        //Activation des validateurs
         NomField.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
@@ -73,15 +80,36 @@ public class ClientAddController implements Initializable {
                 }
             }
         });
-         PrenomField.focusedProperty().addListener(new ChangeListener<Boolean>() {
+        PrenomField.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (!newValue) {
                     PrenomField.validate();
+                    if (PrenomField.validate()) {
+                        flagNomField = true;
+                    } else {
+                        flagNomField = false;
+                    }
                 }
             }
-
         });
+
+        VilleField.focusedProperty().addListener(new ChangeListener<Boolean>() {
+                    @Override
+                    public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                        if (!newValue) {
+                            VilleField.validate();
+                        }
+                    }
+                });
+         CPField.focusedProperty().addListener(new ChangeListener<Boolean>() {
+                    @Override
+                    public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                        if (!newValue) {
+                            CPField.validate();
+                        }
+                    }
+                });
     }
 
 }

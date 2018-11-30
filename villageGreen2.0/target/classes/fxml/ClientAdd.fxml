@@ -67,7 +67,7 @@
                   </VBox>
                   <VBox layoutX="178.0" layoutY="110.0" prefHeight="400.0" prefWidth="300.0">
                      <children>
-                        <JFXTextField fx:id="CPField1" alignment="TOP_LEFT" focusColor="#002c52" labelFloat="true" promptText="Telephone">
+                        <JFXTextField fx:id="TelField" alignment="TOP_LEFT" focusColor="#002c52" labelFloat="true" promptText="Telephone">
                            <padding>
                               <Insets left="10.0" right="10.0" />
                            </padding>
@@ -75,7 +75,7 @@
                               <Insets bottom="20.0" top="20.0" />
                            </VBox.margin>
                         </JFXTextField>
-                        <JFXTextField fx:id="VilleField1" alignment="TOP_LEFT" focusColor="#002c52" labelFloat="true" promptText="Mail">
+                        <JFXTextField fx:id="MailField" alignment="TOP_LEFT" focusColor="#002c52" labelFloat="true" promptText="Mail">
                            <padding>
                               <Insets left="10.0" right="10.0" />
                            </padding>
@@ -83,7 +83,7 @@
                               <Insets bottom="20.0" top="20.0" />
                            </VBox.margin>
                         </JFXTextField>
-                        <JFXComboBox prefHeight="27.0" prefWidth="178.0" promptText="Type Client">
+                        <JFXComboBox fx:id="typeBox" prefHeight="27.0" prefWidth="178.0" promptText="Type Client">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
@@ -91,7 +91,7 @@
                               <Insets bottom="20.0" top="10.0" />
                            </VBox.margin>
                         </JFXComboBox>
-                        <JFXTextField fx:id="PrenomField1" alignment="TOP_LEFT" focusColor="#002c52" labelFloat="true" promptText="Siret">
+                        <JFXTextField fx:id="siretField" alignment="TOP_LEFT" focusColor="#002c52" labelFloat="true" promptText="Siret">
                            <padding>
                               <Insets left="10.0" right="10.0" />
                            </padding>
@@ -99,7 +99,7 @@
                               <Insets bottom="20.0" top="20.0" />
                            </VBox.margin>
                         </JFXTextField>
-                        <JFXComboBox prefHeight="27.0" prefWidth="288.0" promptText="Commercial">
+                        <JFXComboBox fx:id="CommBox" prefHeight="27.0" prefWidth="288.0" promptText="Commercial">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
@@ -109,6 +109,9 @@
                         </JFXComboBox>
                      </children></VBox>
                </children>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </BorderPane.margin>
             </HBox>
          </center>
          <bottom>
@@ -117,14 +120,17 @@
                   <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: white;" text="Sauver" />
                   <JFXButton buttonType="RAISED" layoutX="281.0" layoutY="47.0" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: white;" text="Annuler" />
                </children>
+               <effect>
+                  <DropShadow />
+               </effect>
             </HBox>
          </bottom>
          <top>
             <HBox fx:id="bandeau" prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #3c3f41;">
                <children>
-                  <ImageView fitHeight="63.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                  <ImageView fx:id="logo" fitHeight="63.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                      <image>
-                        <Image url="@../../java/germain/villagegreen2/ui/images/logo.png" />
+                        <Image url="@../styles/logo.png" />
                      </image>
                      <effect>
                         <DropShadow />
@@ -135,13 +141,16 @@
                         <Font size="36.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="30.0" top="10.0" />
+                        <Insets left="35.0" top="10.0" />
                      </HBox.margin>
                      <effect>
                         <DropShadow />
                      </effect>
                   </Label>
                </children>
+               <effect>
+                  <DropShadow />
+               </effect>
             </HBox>
          </top>
       </BorderPane>
