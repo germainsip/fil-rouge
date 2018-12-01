@@ -14,6 +14,7 @@ import germain.villagegreen2.DAL.Client;
 import germain.villagegreen2.DAL.ClientDAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -101,6 +102,17 @@ public class clientDaoTest {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             System.out.println("loupé pour l'insert");
+        }
+        try {
+            ClientDAO clidaoCleaner = new ClientDAO();
+            clidaoCleaner.createConnection();
+            Statement stm = clidaoCleaner.con.createStatement();
+            stm.execute("DELETE FROM client WHERE client_nom = 'TEST'");
+            stm.close();
+            clidaoCleaner.closeConnection();
+            System.out.println("Test supprimé");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
         }
         System.out.println("=========================================");
 
