@@ -15,3 +15,4 @@ Elaboration de la base avec la méthode MCD et céation d'un base de tests.
 Elaboration de l'appli desktop en suivant un modèle DAO
 __WIP__ prochainement dans le dépot les screenshots des éléments de l'interface et le début du modèle DAO
 __Fenêtre de création de clients:__ 
+<img src="addClient.gif" />
