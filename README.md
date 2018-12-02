@@ -14,6 +14,6 @@ Elaboration de la base avec la méthode MCD et céation d'un base de tests.
 ## Phase 2:
 Elaboration de l'appli desktop en suivant un modèle DAO
 ### WIP 
-__Fenêtre de création de clients:__ 
+__Fenêtre de création de clients:__ Avec validation du formulaire et selection de client pro. 
 
 <img src="addClient.gif" />
