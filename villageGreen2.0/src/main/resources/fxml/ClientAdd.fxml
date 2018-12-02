@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
@@ -86,14 +87,6 @@
                               <Insets bottom="20.0" top="20.0" />
                            </VBox.margin>
                         </JFXTextField>
-                        <JFXComboBox fx:id="typeBox" prefHeight="27.0" prefWidth="178.0" promptText="Type Client">
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets bottom="20.0" top="10.0" />
-                           </VBox.margin>
-                        </JFXComboBox>
                         <JFXTextField fx:id="siretField" alignment="TOP_LEFT" focusColor="#002c52" labelFloat="true" promptText="Siret">
                            <padding>
                               <Insets left="10.0" right="10.0" />
@@ -150,6 +143,14 @@
                         <DropShadow />
                      </effect>
                   </Label>
+                  <JFXCheckBox fx:id="checType" onAction="#typeProAction" text="Pro" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="50.0" top="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </JFXCheckBox>
                </children>
                <effect>
                   <DropShadow />

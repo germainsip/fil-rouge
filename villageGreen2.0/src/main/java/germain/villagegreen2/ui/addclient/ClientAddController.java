@@ -10,6 +10,7 @@
  */
 package germain.villagegreen2.ui.addclient;
 
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RegexValidator;
@@ -17,8 +18,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
@@ -32,7 +32,6 @@ import javafx.scene.layout.HBox;
 public class ClientAddController implements Initializable {
 
     boolean flagNomField, flagMailField, flagPrenomField, flagRueField, flagVilleField, flagCPField, flagTelField;
-    ObservableList<String> listeType = FXCollections.observableArrayList("Professionnel","Particulier");
     @FXML
     private HBox bandeau;
     @FXML
@@ -52,11 +51,11 @@ public class ClientAddController implements Initializable {
     @FXML
     private JFXTextField MailField;
     @FXML
-    private JFXComboBox<String> typeBox;
-    @FXML
     private JFXTextField siretField;
     @FXML
     private JFXComboBox<?> CommBox;
+    @FXML
+    private JFXCheckBox checType;
 
     /**
      * Initializes the controller class.
@@ -64,8 +63,7 @@ public class ClientAddController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         siretField.setVisible(false);
-        typeBox.setItems(listeType);
-        
+
         // def des validateur regex
         RegexValidator validatorNPV = new RegexValidator("Champ non conformes");
         validatorNPV.setRegexPattern("^\\p{IsAlphabetic}+[ -]*\\p{IsAlphabetic}*$");
@@ -149,6 +147,15 @@ public class ClientAddController implements Initializable {
                 }
             }
         });
+    }
+
+    @FXML
+    private void typeProAction(ActionEvent event) {
+        if (checType.isSelected()) {
+            siretField.setVisible(true);
+        } else {
+            siretField.setVisible(false);
+        }
     }
 
 }
