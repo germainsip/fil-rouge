@@ -14,6 +14,18 @@ Elaboration de la base avec la méthode MCD et céation d'un base de tests.
 ## Phase 2:
 Elaboration de l'appli desktop en suivant un modèle DAO
 ### WIP appli desktop en JavaFX
-__Fenêtre de création de clients:__ Avec validation du formulaire et selection de client pro. 
+__Fenêtre de création de clients:__ 
+
+Avec validation du formulaire (utilisant les validators de JFoenix) et selection de client pro. 
 
 <img src="addClient.gif" />
+
+__Road map:__
+
+* ~~TODO: fenetre ajout client~~ (OK)
+
+* TODO: fenetre liste client (à faire)
+
+* TODO: repartition des commandes par type client (à faire)
+
+* TODO: Javadoc (à faire)
