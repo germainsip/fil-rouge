@@ -66,7 +66,7 @@ public class clientDaoTest {
             System.out.println("liste crée");
             listetest = clidao.List();
         } catch (SQLException ex) {
-            
+
             System.out.println(ex.getMessage());
 
         }
@@ -77,10 +77,10 @@ public class clientDaoTest {
     }
 
     @Test
-    public void TestInsertion() {
+    public void TestInsertion() throws SQLException {
         System.out.println("=========================================");
         System.out.println("InsertionTEST");
-        
+
         Client cliTest = new Client();
         cliTest.setNom("TEST"); //1
         cliTest.setPrenom("test"); //2
@@ -91,8 +91,14 @@ public class clientDaoTest {
         cliTest.setTelephone("test"); //7
         cliTest.setSiret("test"); //8
         cliTest.setType("pro"); //9
-        cliTest.setCommercialID("1"); //10
+        cliTest.setCommercialID(1); //10
         System.out.println("objet client créé!");
+        
+        Assert.assertNotNull(cliTest);
+       
+            ClientDAO clidao0 = new ClientDAO();
+            List<Client> list0 = clidao0.List();
+       
 
         try {
             ClientDAO clidaotest = new ClientDAO();
@@ -103,6 +109,12 @@ public class clientDaoTest {
             System.out.println(ex.getMessage());
             System.out.println("loupé pour l'insert");
         }
+        ClientDAO clidao1;
+            clidao1 = new ClientDAO();
+            List<Client> list1 = clidao1.List();
+      
+          Assert.assertEquals("client bien inséré", list0.size()+1, list1.size());
+        
         try {
             ClientDAO clidaoCleaner = new ClientDAO();
             clidaoCleaner.createConnection();
@@ -115,7 +127,6 @@ public class clientDaoTest {
             System.out.println(ex.getMessage());
         }
         System.out.println("=========================================");
-
     }
 
 }

@@ -8,30 +8,40 @@
  * |_|_|_\_, | |_|_|_\__,_\__|_||_|_|_||_\___|   
  *       |__/                                    
  */
-
 package germain.villagegreen2.DAL;
 
 /**
  * créé le 30 nov. 2018 , 10:36:18
+ *
  * @author germain
  */
 public class Commercial {
+
     private int id;
     private String nom;
     private String prenom;
     private String telephone;
     private String mail;
+    private String nomPrenom;
 
-public Commercial(){
-    
-}
+    public Commercial() {
 
+    }
+/**
+ * Commercial Constructor with parametre
+ * @param id
+ * @param nom
+ * @param prenom
+ * @param telephone
+ * @param mail 
+ */
     public Commercial(int id, String nom, String prenom, String telephone, String mail) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.telephone = telephone;
         this.mail = mail;
+        this.nomPrenom = this.nom + " " + this.prenom;
     }
 
     public int getId() {
@@ -74,4 +84,19 @@ public Commercial(){
         this.mail = mail;
     }
 
+    public String getNomPrenom() {
+        return nomPrenom;
+    }
+
+    public void setNomPrenom(String nomPrenom) {
+        this.nomPrenom = nomPrenom;
+    }
+    /**
+     * toString methode to show nomPrenom as object name
+     * @return nomPrenom
+     */
+    @Override
+    public String toString(){
+        return nomPrenom;
+    }
 }

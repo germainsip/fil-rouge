@@ -55,7 +55,7 @@ public class ClientDAO extends villageCon implements accesVillage<Client> {
             pstm.setString(7, Cli.getTelephone());
             pstm.setString(8, Cli.getMail());
             pstm.setString(9, Cli.getSiret());
-            pstm.setString(10, Cli.getCommercialID());
+            pstm.setInt(10, Cli.getCommercialID());
 
             pstm.execute();
             pstm.close();
@@ -75,11 +75,11 @@ public class ClientDAO extends villageCon implements accesVillage<Client> {
 //        return res;
 //    }
     @Override
-    public void Insert(Client Cli) {
+    public void Insert(Client Cli) throws SQLException{
         this.createConnection();
 
         PreparedStatement pstm;
-        try {
+       // try {
             pstm = this.con.prepareStatement("INSERT INTO client "
                     + "(client_nom,"
                     + "client_prenom,"
@@ -100,14 +100,14 @@ public class ClientDAO extends villageCon implements accesVillage<Client> {
             pstm.setString(7, Cli.getMail());
             pstm.setString(8, Cli.getType());
             pstm.setString(9, Cli.getSiret());
-            pstm.setString(10, Cli.getCommercialID());
+            pstm.setInt(10, Cli.getCommercialID());
 
             pstm.execute();
             pstm.close();
 
-        } catch (SQLException ex) {
-            Logger.getLogger(ClientDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       // } catch (SQLException ex) {
+       //     Logger.getLogger(ClientDAO.class.getName()).log(Level.SEVERE, null, ex);
+       // }
 
         this.closeConnection();
     }
@@ -144,7 +144,7 @@ public class ClientDAO extends villageCon implements accesVillage<Client> {
                 String telephone = res.getString("client_telephone");
                 String mail = res.getString("client_mail");
                 String siret = res.getString("client_siret");
-                String commercialID = res.getString("client_commerciaux_id");
+                int commercialID = res.getInt("client_commerciaux_id");
                 String type = res.getString("client_type");
 
                 Client c = new Client(id, nom, prenom, rue, ville, codepo, telephone, mail, siret, commercialID, type);

@@ -26,7 +26,7 @@ public class Client {
     private String telephone;
     private String mail;
     private String siret;
-    private String commercialID;
+    private int commercialID;
     private String type;
 
     public Client() {
@@ -49,7 +49,7 @@ public class Client {
      */
     public Client(int id, String nom, String prenom, String rue, String ville,
             String codepo, String telephone, String mail, String siret,
-            String commercialID, String type) {
+            int commercialID, String type) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -168,11 +168,11 @@ public class Client {
  * Client commercialID getter
  * @return 
  */
-    public String getCommercialID() {
+    public int getCommercialID() {
         return commercialID;
     }
 
-    public void setCommercialID(String commercialID) {
+    public void setCommercialID(int commercialID) {
         this.commercialID = commercialID;
     }
 /**

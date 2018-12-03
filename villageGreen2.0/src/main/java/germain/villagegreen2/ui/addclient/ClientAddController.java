@@ -10,19 +10,32 @@
  */
 package germain.villagegreen2.ui.addclient;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RegexValidator;
+import germain.villagegreen2.DAL.Client;
+import germain.villagegreen2.DAL.ClientDAO;
+import germain.villagegreen2.DAL.Commercial;
+import germain.villagegreen2.DAL.CommercialDAO;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -31,7 +44,12 @@ import javafx.scene.layout.HBox;
  */
 public class ClientAddController implements Initializable {
 
-    boolean flagNomField, flagMailField, flagPrenomField, flagRueField, flagVilleField, flagCPField, flagTelField;
+    boolean flagNomField, flagMailField, flagPrenomField, flagRueField, flagVilleField, flagCPField, flagTelField, formFlag = false;
+
+    String type = "par";
+    public ClientDAO cliDAO;
+    public CommercialDAO com;
+    ObservableList<Commercial> liste_obs;
     @FXML
     private HBox bandeau;
     @FXML
@@ -53,9 +71,15 @@ public class ClientAddController implements Initializable {
     @FXML
     private JFXTextField siretField;
     @FXML
-    private JFXComboBox<?> CommBox;
+    private JFXComboBox<Commercial> CommBox;
     @FXML
     private JFXCheckBox checType;
+    @FXML
+    private JFXButton AddButton;
+    @FXML
+    private JFXButton CancelButton;
+    @FXML
+    private AnchorPane rootPane;
 
     /**
      * Initializes the controller class.
@@ -64,20 +88,35 @@ public class ClientAddController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         siretField.setVisible(false);
 
+        try {
+            com = new CommercialDAO();
+            liste_obs = FXCollections.observableArrayList(com.List());
+            CommBox.setItems(liste_obs);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ClientAddController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         // def des validateur regex
         RegexValidator validatorNPV = new RegexValidator("Champ non conformes");
         validatorNPV.setRegexPattern("^\\p{IsAlphabetic}+[ -]*\\p{IsAlphabetic}*$");
         RegexValidator validatorCP = new RegexValidator("Code postal non conforme");
         validatorCP.setRegexPattern("^\\d{5}$");
+        RegexValidator validatorTel = new RegexValidator("Numéro à 10 chiffres");
+        validatorTel.setRegexPattern("^\\d{10}");
         RegexValidator validatorMail = new RegexValidator("Adresse mail non valide");
         validatorMail.setRegexPattern("^\\w+[\\w-\\.]*\\@\\w+((-\\w+)|(\\w*))\\.[a-z]{2,3}$");
+        RegexValidator validatorRue = new RegexValidator("Numéro et nom de rue");
+        validatorRue.setRegexPattern("^\\d+[ ,]{1}[^0-9]+$");
         //affectation des validateurs
-        //TODO affecter tous les validateurs
+
+        //TODO validateur siret
         NomField.getValidators().add(validatorNPV);
         PrenomField.getValidators().add(validatorNPV);
         VilleField.getValidators().add(validatorNPV);
         CPField.getValidators().add(validatorCP);
         MailField.getValidators().add(validatorMail);
+        TelField.getValidators().add(validatorTel);
+        RueField.getValidators().add(validatorRue);
 
         //Activation des validateurs
         //TODO activer tous les validateurs
@@ -94,6 +133,7 @@ public class ClientAddController implements Initializable {
                 }
             }
         });
+
         PrenomField.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
@@ -121,6 +161,7 @@ public class ClientAddController implements Initializable {
                 }
             }
         });
+
         CPField.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
@@ -134,6 +175,7 @@ public class ClientAddController implements Initializable {
                 }
             }
         });
+
         MailField.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
@@ -147,15 +189,96 @@ public class ClientAddController implements Initializable {
                 }
             }
         });
+
+        TelField.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                if (!newValue) {
+                    TelField.validate();
+                    if (TelField.validate()) {
+                        flagTelField = true;
+                    } else {
+                        flagTelField = false;
+                    }
+                }
+            }
+        });
+
+        RueField.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                if (!newValue) {
+                    RueField.validate();
+                    if (RueField.validate()) {
+                        flagRueField = true;
+                    } else {
+                        flagRueField = false;
+                    }
+                }
+            }
+        });
     }
 
     @FXML
     private void typeProAction(ActionEvent event) {
         if (checType.isSelected()) {
             siretField.setVisible(true);
+            type = "pro";
         } else {
             siretField.setVisible(false);
+            siretField.clear();
+            type = "par";
         }
+    }
+
+    @FXML
+    private void AddClientHandelButton(ActionEvent event) {
+        formFlag = flagNomField
+                & flagPrenomField
+                & flagRueField
+                & flagCPField
+                & flagVilleField
+                & flagTelField
+                & flagMailField
+                & !CommBox.getSelectionModel().isEmpty();
+
+        if (formFlag) {
+//            Alert alert = new Alert(Alert.AlertType.WARNING);
+//            alert.setContentText("C'est bon ça!!!!");
+//            alert.showAndWait();
+            Client cli = new Client();
+            cli.setNom(NomField.getText());
+            cli.setPrenom(PrenomField.getText());
+            cli.setRue(RueField.getText());
+            cli.setCodepo(CPField.getText());
+            cli.setVille(VilleField.getText());
+            cli.setTelephone(TelField.getText());
+            cli.setMail(MailField.getText());
+            cli.setType(type);
+            cli.setSiret(siretField.getText());
+            cli.setCommercialID(CommBox.getSelectionModel().getSelectedItem().getId());
+            System.out.println(cli.getCommercialID());
+            try {
+                ClientDAO cliIns = new ClientDAO();
+                cliIns.Insert(cli);
+            } catch (Exception ex) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setContentText("Problème d'insertion dans la base");
+                alert.showAndWait();
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Veuillez compléter le formulaire");
+            alert.showAndWait();
+        }
+
+    }
+
+    @FXML
+    private void CancelHandelButton(ActionEvent event) {
+         Stage stage = (Stage) rootPane.getScene().getWindow();
+        System.out.println(stage);
+        stage.close();
     }
 
 }

@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="germain.villagegreen2.ui.addclient.ClientAddController">
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="germain.villagegreen2.ui.addclient.ClientAddController">
     <stylesheets>
         <URL value="@/styles/clientadd.css" />
     </stylesheets>
@@ -113,8 +113,8 @@
          <bottom>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0" spacing="100.0" style="-fx-background-color: #3c3f41;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton buttonType="RAISED" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: white;" text="Sauver" />
-                  <JFXButton buttonType="RAISED" layoutX="281.0" layoutY="47.0" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: white;" text="Annuler" />
+                  <JFXButton fx:id="AddButton" buttonType="RAISED" onAction="#AddClientHandelButton" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: white;" text="Sauver" />
+                  <JFXButton fx:id="CancelButton" buttonType="RAISED" layoutX="281.0" layoutY="47.0" onAction="#CancelHandelButton" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: white;" text="Annuler" />
                </children>
                <effect>
                   <DropShadow />

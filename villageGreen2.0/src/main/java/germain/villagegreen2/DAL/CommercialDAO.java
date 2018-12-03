@@ -84,7 +84,7 @@ public class CommercialDAO extends villageCon implements accesVillage<Commercial
                 int id = res.getInt("commerciaux_id");
                 String nom = res.getString("commerciaux_nom");
                 String prenom = res.getString("commerciaux_prenom");
-                String telephone = res.getString("commerciaux_telephone");
+                String telephone = res.getString("commerciaux_tel");
                 String mail = res.getString("commerciaux_mail");
 
                 Commercial c = new Commercial(id, nom, prenom, telephone, mail);
