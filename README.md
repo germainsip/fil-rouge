@@ -26,6 +26,8 @@ __Road map:__
 
 * TODO: fenetre liste client (à faire)
 
+![board](maquetteBoard.png)
+
 * TODO: repartition des commandes par type client (à faire)
 
 * TODO: Javadoc (à faire)
