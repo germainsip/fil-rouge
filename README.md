@@ -21,5 +21,7 @@ Avec validation du formulaire (utilisant les validators de JFoenix) et selection
 <img src="addClient.gif" />
 
 __road map__
+TODO: fenetre liste client
 
+TODO: repartition des commandes par type client
 
