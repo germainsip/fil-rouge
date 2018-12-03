@@ -20,8 +20,12 @@ Avec validation du formulaire (utilisant les validators de JFoenix) et selection
 
 <img src="addClient.gif" />
 
-__road map__
-TODO: fenetre liste client
+__Road map:__
 
-TODO: repartition des commandes par type client
+* ~~TODO: fenetre ajout client~~ (OK)
 
+* TODO: fenetre liste client (à faire)
+
+* TODO: repartition des commandes par type client (à faire)
+
+* TODO: Javadoc (à faire)
