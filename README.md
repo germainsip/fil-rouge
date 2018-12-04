@@ -24,9 +24,9 @@ __Road map:__
 
 * ~~TODO: fenetre ajout client~~ (OK)
 
-* TODO: fenetre liste client (à faire)
+* TODO: fenetre liste client (en cours)
 
-![board](maquetteBoard.png)
+![board](Dashboard.png)
 
 * TODO: repartition des commandes par type client (à faire)
 
