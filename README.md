@@ -26,8 +26,10 @@ __Road map:__
 
 * TODO: fenetre liste client (en cours)
 
-![board](Dashboard.png)
+![board1](dasboard1.png)  
 
-* TODO: repartition des commandes par type client (à faire)
+* TODO: repartition des commandes par type client (en cours)
+
+![board2](dashboard2.png)
 
 * TODO: Javadoc (à faire)
