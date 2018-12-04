@@ -113,8 +113,14 @@
          <bottom>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0" spacing="100.0" style="-fx-background-color: #3c3f41;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton fx:id="AddButton" buttonType="RAISED" onAction="#AddClientHandelButton" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: white;" text="Sauver" />
-                  <JFXButton fx:id="CancelButton" buttonType="RAISED" layoutX="281.0" layoutY="47.0" onAction="#CancelHandelButton" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: white;" text="Annuler" />
+                  <JFXButton fx:id="AddButton" buttonType="RAISED" onAction="#AddClientHandelButton" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: white;" text="Sauver">
+                     <font>
+                        <Font size="18.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="CancelButton" buttonType="RAISED" layoutX="281.0" layoutY="47.0" onAction="#CancelHandelButton" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: d12626;" text="Annuler" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font></JFXButton>
                </children>
                <effect>
                   <DropShadow />

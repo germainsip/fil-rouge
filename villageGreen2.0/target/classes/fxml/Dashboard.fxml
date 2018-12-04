@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="521.0" prefWidth="743.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="germain.villagegreen2.ui.dashboard.DashboardController">
+    <stylesheets>
+        <URL value="@/styles/dashboard.css" />
+    </stylesheets>
+   <children>
+      <BorderPane layoutX="278.0" layoutY="147.0" prefHeight="521.0" prefWidth="743.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox fx:id="bandeau" prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #3c3f41;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="logo" fitHeight="63.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../styles/logo.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <Label alignment="TOP_LEFT" text="Dashboard Clients" textFill="WHITE" underline="true">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="90.0" top="10.0" />
+                     </HBox.margin>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+         </top>
+         <right>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="50.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton buttonType="RAISED" prefHeight="56.0" prefWidth="110.0" text="Détails" />
+                  <JFXButton buttonType="RAISED" prefHeight="56.0" prefWidth="110.0" text="Ajout Client" />
+                  <JFXButton buttonType="RAISED" prefHeight="56.0" prefWidth="110.0" text="Quitter" />
+               </children>
+            </VBox>
+         </right>
+         <center>
+            <TableView prefHeight="200.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
