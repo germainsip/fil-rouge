@@ -3,11 +3,12 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,16 +19,16 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="germain.villagegreen2.ui.dashboard.DashboardController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #dddddd;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="germain.villagegreen2.ui.dashboard.DashboardController">
     <stylesheets>
         <URL value="@/styles/dashboard.css" />
     </stylesheets>
    <children>
       <BorderPane layoutX="278.0" layoutY="147.0" prefHeight="521.0" prefWidth="743.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <HBox fx:id="bandeau" prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #3c3f41;" BorderPane.alignment="CENTER">
+            <HBox fx:id="bandeau" alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #3c3f41;" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fx:id="logo" fitHeight="63.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                  <ImageView fx:id="logo" fitHeight="63.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                      <image>
                         <Image url="@../styles/logo.png" />
                      </image>
@@ -40,20 +41,31 @@
                         <Font size="36.0" />
                      </font>
                      <HBox.margin>
-                        <Insets top="10.0" />
+                        <Insets top="5.0" />
                      </HBox.margin>
                      <effect>
                         <DropShadow />
                      </effect>
                   </Label>
+                  <JFXButton fx:id="refreshButton" buttonType="RAISED" contentDisplay="CENTER" onAction="#refreshHandler" prefHeight="33.0" prefWidth="42.0" ripplerFill="#3285ba" text=" ">
+                     <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="fas-redo" iconSize="24" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </JFXButton>
                </children>
                <effect>
                   <DropShadow />
                </effect>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" />
+               </BorderPane.margin>
             </HBox>
          </top>
          <right>
-            <VBox alignment="TOP_CENTER" prefHeight="707.0" prefWidth="141.0" spacing="10.0" BorderPane.alignment="TOP_CENTER">
+            <VBox alignment="TOP_CENTER" prefHeight="707.0" prefWidth="141.0" spacing="30.0" BorderPane.alignment="TOP_CENTER">
                <children>
                   <JFXButton buttonType="RAISED" contentDisplay="TOP" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: #3c3f41;" text="Détails" textFill="WHITE">
                      <VBox.margin>
@@ -86,8 +98,11 @@
                   </JFXButton>
                </children>
                <BorderPane.margin>
-                  <Insets top="30.0" />
+                  <Insets />
                </BorderPane.margin>
+               <padding>
+                  <Insets top="40.0" />
+               </padding>
             </VBox>
          </right>
          <center>
@@ -97,30 +112,49 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TreeTableView layoutX="174.0" layoutY="152.0" prefHeight="704.0" prefWidth="863.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <TableView fx:id="tableClient" layoutX="303.0" layoutY="223.0" prefHeight="645.0" prefWidth="859.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <columns>
-                                  <TreeTableColumn fx:id="nomCol" prefWidth="75.0" text="Nom" />
-                                  <TreeTableColumn fx:id="prenomCol" prefWidth="75.0" text="Prénom" />
-                                    <TreeTableColumn fx:id="telcol" prefWidth="75.0" text="téléphone" />
-                                    <TreeTableColumn fx:id="mailCol" prefWidth="75.0" text="mail" />
-                                    <TreeTableColumn fx:id="typeCol" prefWidth="75.0" text="type" />
+                                  <TableColumn fx:id="nomCol" prefWidth="75.0" text="Nom" />
+                                  <TableColumn fx:id="prenomCol" prefWidth="75.0" text="Prénom" />
+                                    <TableColumn fx:id="telCol" prefWidth="75.0" text="Téléphone" />
+                                    <TableColumn fx:id="typeCol" prefWidth="75.0" text="Type" />
                                 </columns>
                                  <columnResizePolicy>
-                                    <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                  </columnResizePolicy>
-                              </TreeTableView>
+                              </TableView>
                            </children>
                         </AnchorPane>
                   </content>
                 </Tab>
                 <Tab fx:id="statTab" text="Stats">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <PieChart layoutX="180.0" layoutY="123.0" prefHeight="645.0" prefWidth="859.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children></AnchorPane>
                   </content>
                 </Tab>
               </tabs>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
             </TabPane>
          </center>
+         <bottom>
+            <HBox fx:id="bandeau1" alignment="CENTER" prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #3c3f41;" BorderPane.alignment="CENTER">
+               <effect>
+                  <DropShadow />
+               </effect>
+                <children>
+                  <Label text="Pour trier ou rechercher cliquer droit sur la colonne désirée" textFill="WHITE">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>

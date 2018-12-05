@@ -140,5 +140,10 @@
             <version>2.4.0</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>8.40.14</version>
+        </dependency>
     </dependencies>
 </project>

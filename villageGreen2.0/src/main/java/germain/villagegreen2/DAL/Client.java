@@ -10,6 +10,8 @@
  */
 package germain.villagegreen2.DAL;
 
+import javafx.beans.property.SimpleStringProperty;
+
 /**
  * créé le 27 nov. 2018 , 10:52:49
  *
@@ -18,16 +20,16 @@ package germain.villagegreen2.DAL;
 public class Client {
 
     private int id;
-    private String nom;
-    private String prenom;
-    private String rue;
-    private String ville;
-    private String codepo;
-    private String telephone;
-    private String mail;
-    private String siret;
+    private SimpleStringProperty nom;
+    private SimpleStringProperty prenom;
+    private SimpleStringProperty rue;
+    private SimpleStringProperty ville;
+    private SimpleStringProperty codepo;
+    private SimpleStringProperty telephone;
+    private SimpleStringProperty mail;
+    private SimpleStringProperty siret;
     private int commercialID;
-    private String type;
+    private SimpleStringProperty type;
 
     public Client() {
     }
@@ -51,16 +53,16 @@ public class Client {
             String codepo, String telephone, String mail, String siret,
             int commercialID, String type) {
         this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.rue = rue;
-        this.ville = ville;
-        this.codepo = codepo;
-        this.telephone = telephone;
-        this.mail = mail;
-        this.siret = siret;
+        this.nom = new SimpleStringProperty(nom);
+        this.prenom = new SimpleStringProperty(prenom);
+        this.rue = new SimpleStringProperty(rue);
+        this.ville = new SimpleStringProperty(ville);
+        this.codepo = new SimpleStringProperty(codepo);
+        this.telephone = new SimpleStringProperty(telephone);
+        this.mail = new SimpleStringProperty(mail);
+        this.siret = new SimpleStringProperty(siret);
         this.commercialID = commercialID;
-        this.type = type;
+        this.type = new SimpleStringProperty(type);
     }
 /**
  * Client Id getter
@@ -81,88 +83,88 @@ public class Client {
  * @return String name
  */
     public String getNom() {
-        return nom;
+        return nom.get();
     }
 
     public void setNom(String nom) {
-        this.nom = nom;
+        this.nom = new SimpleStringProperty(nom);
     }
 /**
  * Client second name getter
  * @return String second name
  */
     public String getPrenom() {
-        return prenom;
+        return prenom.get();
     }
 
     public void setPrenom(String prenom) {
-        this.prenom = prenom;
+        this.prenom = new SimpleStringProperty(prenom);
     }
 /**
  * Client Street getter
  * @return String street
  */
     public String getRue() {
-        return rue;
+        return rue.get();
     }
 
     public void setRue(String rue) {
-        this.rue = rue;
+        this.rue = new SimpleStringProperty(rue);
     }
 /**
  * Client town getter
  * @return String town
  */
     public String getVille() {
-        return ville;
+        return ville.get();
     }
 
     public void setVille(String ville) {
-        this.ville = ville;
+        this.ville = new SimpleStringProperty(ville);
     }
 /**
  * Client code postal getter
  * @return String code postal
  */
     public String getCodepo() {
-        return codepo;
+        return codepo.get();
     }
 
     public void setCodepo(String codepo) {
-        this.codepo = codepo;
+        this.codepo = new SimpleStringProperty(codepo);
     }
 /**
  * Client telephone getter
  * @return String telephone
  */
     public String getTelephone() {
-        return telephone;
+        return telephone.get();
     }
 
     public void setTelephone(String telephone) {
-        this.telephone = telephone;
+        this.telephone =new SimpleStringProperty(telephone);
     }
 /**
  * Client Mail getter
  * @return String mail
  */
     public String getMail() {
-        return mail;
+        return mail.get();
     }
 
     public void setMail(String mail) {
-        this.mail = mail;
+        this.mail = new SimpleStringProperty(mail);
     }
 /**
  * Client Siret getter
  * @return String siret
  */
     public String getSiret() {
-        return siret;
+        return siret.get();
     }
 
     public void setSiret(String siret) {
-        this.siret = siret;
+        this.siret = new SimpleStringProperty(siret);
     }
 /**
  * Client commercialID getter
@@ -180,11 +182,11 @@ public class Client {
  * @return String type
  */
     public String getType() {
-        return type;
+        return type.get();
     }
 
     public void setType(String type) {
-        this.type = type;
+        this.type = new SimpleStringProperty(type);
     }
 
 }

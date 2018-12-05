@@ -101,8 +101,8 @@ public class ClientAddController implements Initializable {
         validatorNPV.setRegexPattern("^\\p{IsAlphabetic}+[ -]*\\p{IsAlphabetic}*$");
         RegexValidator validatorCP = new RegexValidator("Code postal non conforme");
         validatorCP.setRegexPattern("^\\d{5}$");
-        RegexValidator validatorTel = new RegexValidator("Numéro à 10 chiffres");
-        validatorTel.setRegexPattern("^\\d{10}");
+        RegexValidator validatorTel = new RegexValidator("XX XX XX XX XX");
+        validatorTel.setRegexPattern("^\\d{2}[ ]{1}\\d{2}[ ]{1}\\d{2}[ ]{1}\\d{2}[ ]{1}\\d{2}");
         RegexValidator validatorMail = new RegexValidator("Adresse mail non valide");
         validatorMail.setRegexPattern("^\\w+[\\w-\\.]*\\@\\w+((-\\w+)|(\\w*))\\.[a-z]{2,3}$");
         RegexValidator validatorRue = new RegexValidator("Numéro et nom de rue");
@@ -261,6 +261,10 @@ public class ClientAddController implements Initializable {
             try {
                 ClientDAO cliIns = new ClientDAO();
                 cliIns.Insert(cli);
+                //fermeture de la fenetre après insertion
+                Stage stage = (Stage) rootPane.getScene().getWindow();
+                System.out.println(stage);
+                stage.close();
             } catch (Exception ex) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setContentText("Problème d'insertion dans la base");
@@ -276,7 +280,7 @@ public class ClientAddController implements Initializable {
 
     @FXML
     private void CancelHandelButton(ActionEvent event) {
-         Stage stage = (Stage) rootPane.getScene().getWindow();
+        Stage stage = (Stage) rootPane.getScene().getWindow();
         System.out.println(stage);
         stage.close();
     }
