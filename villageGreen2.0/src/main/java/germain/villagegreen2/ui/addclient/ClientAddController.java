@@ -29,13 +29,17 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -261,10 +265,23 @@ public class ClientAddController implements Initializable {
             try {
                 ClientDAO cliIns = new ClientDAO();
                 cliIns.Insert(cli);
-                //fermeture de la fenetre après insertion
-                Stage stage = (Stage) rootPane.getScene().getWindow();
-                System.out.println(stage);
-                stage.close();
+                //notif utilisateur
+                Notifications notif = Notifications.create()
+                        .darkStyle()
+                        .title("Insertion Client")
+                        .text("Le nouveau Client a bien été ajouté.")
+                        .graphic(null)
+                        .hideAfter(Duration.seconds(5))
+                        .position(Pos.CENTER)
+                        .onAction(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                System.out.println("C'est fait!!");
+                            }
+                        });
+                notif.showConfirm();
+                ClearFields();
+                
             } catch (Exception ex) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setContentText("Problème d'insertion dans la base");
@@ -283,6 +300,17 @@ public class ClientAddController implements Initializable {
         Stage stage = (Stage) rootPane.getScene().getWindow();
         System.out.println(stage);
         stage.close();
+    }
+    
+    private void ClearFields(){
+        NomField.clear();
+        PrenomField.clear();
+        RueField.clear();
+        VilleField.clear();
+        CPField.clear();
+        TelField.clear();
+        MailField.clear();
+        siretField.clear();
     }
 
 }

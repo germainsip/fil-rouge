@@ -1,22 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TEST.clientDaoTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.268 sec <<< FAILURE! - in TEST.clientDaoTest
-TestInsertion(TEST.clientDaoTest)  Time elapsed: 0.207 sec  <<< ERROR!
-java.lang.NullPointerException: null
-	at germain.villagegreen2.DAL.villageCon.<init>(villageCon.java:34)
-	at germain.villagegreen2.DAL.ClientDAO.<init>(ClientDAO.java:28)
-	at TEST.clientDaoTest.TestInsertion(clientDaoTest.java:99)
-
-TestCreationList(TEST.clientDaoTest)  Time elapsed: 0 sec  <<< ERROR!
-java.lang.NullPointerException: null
-	at germain.villagegreen2.DAL.villageCon.<init>(villageCon.java:34)
-	at germain.villagegreen2.DAL.ClientDAO.<init>(ClientDAO.java:28)
-	at TEST.clientDaoTest.TestCreationList(clientDaoTest.java:64)
-
-TestConnection(TEST.clientDaoTest)  Time elapsed: 0.002 sec  <<< ERROR!
-java.lang.NullPointerException: null
-	at germain.villagegreen2.DAL.villageCon.<init>(villageCon.java:34)
-	at germain.villagegreen2.DAL.ClientDAO.<init>(ClientDAO.java:28)
-	at TEST.clientDaoTest.TestConnection(clientDaoTest.java:41)
-
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.384 sec - in TEST.clientDaoTest

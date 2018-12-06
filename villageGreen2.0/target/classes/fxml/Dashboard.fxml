@@ -67,12 +67,12 @@
          <right>
             <VBox alignment="TOP_CENTER" prefHeight="707.0" prefWidth="141.0" spacing="30.0" BorderPane.alignment="TOP_CENTER">
                <children>
-                  <JFXButton buttonType="RAISED" contentDisplay="TOP" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: #3c3f41;" text="Détails" textFill="WHITE">
+                  <JFXButton fx:id="detailButton" buttonType="RAISED" contentDisplay="TOP" onAction="#showdetailHandler" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: #3c3f41;" text="Détails" textFill="WHITE">
                      <VBox.margin>
                         <Insets left="3.0" right="3.0" />
                      </VBox.margin>
                      <graphic>
-                        <FontIcon fx:id="detailButton" iconColor="WHITE" iconLiteral="far-address-card" iconSize="50" />
+                        <FontIcon  iconColor="WHITE" iconLiteral="far-address-card" iconSize="50" />
                      </graphic>
                   </JFXButton>
                   <JFXButton fx:id="ajoutButton" buttonType="RAISED" contentDisplay="TOP" onAction="#addHandler" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: #3c3f41;" text="Ajout Client" textFill="WHITE">
@@ -83,7 +83,7 @@
                         <FontIcon iconColor="WHITE" iconLiteral="fas-edit" iconSize="50" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="deletButton" buttonType="RAISED" contentDisplay="TOP" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: #3c3f41;" text="Suppression " textFill="WHITE">
+                  <JFXButton fx:id="deletButton" buttonType="RAISED" contentDisplay="TOP" onAction="#deleteHandler" prefHeight="130.0" prefWidth="130.0" style="-fx-background-color: #3c3f41;" text="Suppression " textFill="WHITE">
                      <graphic>
                         <FontIcon iconColor="WHITE" iconLiteral="far-trash-alt" iconSize="50" />
                      </graphic></JFXButton>

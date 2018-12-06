@@ -8,6 +8,7 @@ germain/villagegreen2/ui/dashboard/Main.class
 germain/villagegreen2/ui/addclient/ClientAddLoader.class
 germain/villagegreen2/DAL/CommercialDAO.class
 germain/villagegreen2/ui/addclient/ClientAddController$3.class
+germain/villagegreen2/ui/addclient/ClientAddController$8.class
 germain/villagegreen2/DAL/Client.class
 germain/villagegreen2/ui/addclient/ClientAddController$5.class
 germain/villagegreen2/ui/addclient/ClientAddController$7.class

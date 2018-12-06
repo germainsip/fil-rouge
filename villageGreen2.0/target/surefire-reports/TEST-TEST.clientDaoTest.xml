@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TEST.clientDaoTest" time="0.209" tests="3" errors="3" skipped="0" failures="0">
+<testsuite name="TEST.clientDaoTest" time="0.331" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib"/>
@@ -62,44 +62,7 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="TestInsertion" classname="TEST.clientDaoTest" time="0.207">
-    <error type="java.lang.NullPointerException:"><![CDATA[java.lang.NullPointerException: null
-	at germain.villagegreen2.DAL.villageCon.<init>(villageCon.java:34)
-	at germain.villagegreen2.DAL.ClientDAO.<init>(ClientDAO.java:28)
-	at TEST.clientDaoTest.TestInsertion(clientDaoTest.java:99)
-]]></error>
-    <system-out><![CDATA[=========================================
-InsertionTEST
-objet client créé!
-Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-]]></system-out>
-  </testcase>
-  <testcase name="TestCreationList" classname="TEST.clientDaoTest" time="0">
-    <error type="java.lang.NullPointerException:"><![CDATA[java.lang.NullPointerException: null
-	at germain.villagegreen2.DAL.villageCon.<init>(villageCon.java:34)
-	at germain.villagegreen2.DAL.ClientDAO.<init>(ClientDAO.java:28)
-	at TEST.clientDaoTest.TestCreationList(clientDaoTest.java:64)
-]]></error>
-    <system-out><![CDATA[=========================================
-CréationTEST
-Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-]]></system-out>
-  </testcase>
-  <testcase name="TestConnection" classname="TEST.clientDaoTest" time="0.002">
-    <error type="java.lang.NullPointerException:"><![CDATA[java.lang.NullPointerException: null
-	at germain.villagegreen2.DAL.villageCon.<init>(villageCon.java:34)
-	at germain.villagegreen2.DAL.ClientDAO.<init>(ClientDAO.java:28)
-	at TEST.clientDaoTest.TestConnection(clientDaoTest.java:41)
-]]></error>
-    <system-out><![CDATA[=========================================
-ConnectionTEST
-Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-]]></system-out>
-  </testcase>
+  <testcase name="TestInsertion" classname="TEST.clientDaoTest" time="0.32"/>
+  <testcase name="TestCreationList" classname="TEST.clientDaoTest" time="0.005"/>
+  <testcase name="TestConnection" classname="TEST.clientDaoTest" time="0.006"/>
 </testsuite>

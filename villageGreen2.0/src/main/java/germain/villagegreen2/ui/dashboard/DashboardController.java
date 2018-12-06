@@ -11,6 +11,7 @@
 package germain.villagegreen2.ui.dashboard;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDialog;
 import germain.villagegreen2.DAL.Client;
 import germain.villagegreen2.DAL.ClientDAO;
 import java.io.IOException;
@@ -36,7 +37,6 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.controlsfx.control.table.TableFilter;
-import org.kordamp.ikonli.javafx.FontIcon;
 
 /**
  * FXML Controller class
@@ -45,8 +45,8 @@ import org.kordamp.ikonli.javafx.FontIcon;
  */
 public class DashboardController implements Initializable {
 
-  //  ObservableList<Client> listObsCli;
-           ObservableList<Client> listObsCli = FXCollections.observableArrayList();
+    //  ObservableList<Client> listObsCli;
+    ObservableList<Client> listObsCli = FXCollections.observableArrayList();
 
     @FXML
     private HBox bandeau;
@@ -61,7 +61,7 @@ public class DashboardController implements Initializable {
     @FXML
     private Tab statTab;
     @FXML
-    private FontIcon detailButton;
+    private JFXButton detailButton;
     @FXML
     private JFXButton ajoutButton;
     @FXML
@@ -78,17 +78,21 @@ public class DashboardController implements Initializable {
     private TableColumn<Client, String> typeCol;
     @FXML
     private JFXButton refreshButton;
+    @FXML
+    private JFXDialog dialog;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-      chargement();
+
+        chargement();
     }
-public void chargement(){
-      try {
+
+    public void chargement() {
+        listObsCli.clear();
+        try {
             ClientDAO cliDAO = new ClientDAO();
 
             listObsCli.addAll(cliDAO.List());
@@ -100,7 +104,7 @@ public void chargement(){
 
             tableClient.setItems(listObsCli);
             TableFilter filter = new TableFilter(tableClient);
-            
+
         } catch (Exception e) {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -109,10 +113,10 @@ public void chargement(){
             alert.setContentText(e.getMessage());
             alert.showAndWait();
             System.exit(0);
-           
 
         }
-}
+    }
+
     @FXML
     private void addHandler(ActionEvent event) {
         loadWindow("/fxml/ClientAdd.fxml", "Ajout Client");
@@ -140,6 +144,27 @@ public void chargement(){
 
     @FXML
     private void refreshHandler(ActionEvent event) {
+        
         chargement();
+    }
+
+    @FXML
+    private void showdetailHandler(ActionEvent event) {
+        
+    }
+
+    @FXML
+    private void deleteHandler(ActionEvent event) {
+        //TODO confirmation de suppression avec dialog box
+        try {
+            ClientDAO cliDAO = new ClientDAO();
+            cliDAO.Delete(tableClient.getSelectionModel().getSelectedItem());
+            chargement();
+        } catch (Exception ex) {
+             Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setContentText("Problème de suppression dans la base");
+                alert.showAndWait();
+        }
+
     }
 }
