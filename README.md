@@ -24,9 +24,10 @@ __Road map:__
 
 * ~~TODO: fenetre ajout client~~ (OK)
 
-* TODO: fenetre liste client (en cours)
+* TODO: fenetre liste client (OK)
+avec détail sous forme dialog et liste triable par clique droit
 
-![board1](dasboard1.png)  
+![board1](dashboard.png)  
 
 * TODO: repartition des commandes par type client (en cours)
 
