@@ -1,11 +1,13 @@
 /Users/germain/OneDrive/CDA/fil rouge/villageGreen2.0/src/main/java/germain/villagegreen2/DAL/Client.java
 /Users/germain/OneDrive/CDA/fil rouge/villageGreen2.0/src/main/java/germain/villagegreen2/DAL/accesVillage.java
+/Users/germain/OneDrive/CDA/fil rouge/villageGreen2.0/src/main/java/germain/villagegreen2/Statistics/Statistic.java
 /Users/germain/OneDrive/CDA/fil rouge/villageGreen2.0/src/main/java/germain/villagegreen2/DAL/ClientDAO.java
 /Users/germain/OneDrive/CDA/fil rouge/villageGreen2.0/src/main/java/germain/villagegreen2/MainApp.java
 /Users/germain/OneDrive/CDA/fil rouge/villageGreen2.0/src/main/java/com/jfoenix/validation/RegexValidator.java
 /Users/germain/OneDrive/CDA/fil rouge/villageGreen2.0/src/main/java/germain/villagegreen2/ui/dashboard/Main.java
 /Users/germain/OneDrive/CDA/fil rouge/villageGreen2.0/src/main/java/germain/villagegreen2/ui/addclient/ClientAddLoader.java
 /Users/germain/OneDrive/CDA/fil rouge/villageGreen2.0/src/main/java/germain/villagegreen2/FXMLController.java
+/Users/germain/OneDrive/CDA/fil rouge/villageGreen2.0/src/main/java/germain/villagegreen2/Statistics/StatisticDAO.java
 /Users/germain/OneDrive/CDA/fil rouge/villageGreen2.0/src/main/java/germain/villagegreen2/DAL/Commercial.java
 /Users/germain/OneDrive/CDA/fil rouge/villageGreen2.0/src/main/java/germain/villagegreen2/ui/dashboard/DashboardController.java
 /Users/germain/OneDrive/CDA/fil rouge/villageGreen2.0/src/main/java/germain/villagegreen2/DAL/CommercialDAO.java

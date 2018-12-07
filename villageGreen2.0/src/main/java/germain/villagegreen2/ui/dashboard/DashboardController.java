@@ -12,6 +12,7 @@ package germain.villagegreen2.ui.dashboard;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXDialogLayout;
 import germain.villagegreen2.DAL.Client;
 import germain.villagegreen2.DAL.ClientDAO;
 import java.io.IOException;
@@ -22,11 +23,13 @@ import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
@@ -34,6 +37,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.controlsfx.control.table.TableFilter;
@@ -79,7 +84,9 @@ public class DashboardController implements Initializable {
     @FXML
     private JFXButton refreshButton;
     @FXML
-    private JFXDialog dialog;
+    private StackPane stackDetail;
+    @FXML
+    private PieChart pieType;
 
     /**
      * Initializes the controller class.
@@ -115,6 +122,7 @@ public class DashboardController implements Initializable {
             System.exit(0);
 
         }
+        //TODO ajouter le chargement du pie
     }
 
     @FXML
@@ -144,13 +152,33 @@ public class DashboardController implements Initializable {
 
     @FXML
     private void refreshHandler(ActionEvent event) {
-        
+
         chargement();
     }
 
     @FXML
     private void showdetailHandler(ActionEvent event) {
-        
+        JFXDialogLayout content = new JFXDialogLayout();
+        final JFXDialog dialog = new JFXDialog(stackDetail, content, JFXDialog.DialogTransition.CENTER);
+
+        content.setHeading(new Text("Détail du client:"));
+        content.setBody(new Text(
+                  "Nom:        " + tableClient.getSelectionModel().getSelectedItem().getNom() + "\n"
+                + "Prénom:     " + tableClient.getSelectionModel().getSelectedItem().getPrenom() + "\n"
+                + "Mail:       " + tableClient.getSelectionModel().getSelectedItem().getMail() + "\n"
+                + "Téléphone:  " + tableClient.getSelectionModel().getSelectedItem().getTelephone() + "\n"
+                + "Adresse:    " + tableClient.getSelectionModel().getSelectedItem().getRue() + " " + tableClient.getSelectionModel().getSelectedItem().getCodepo() + " " + tableClient.getSelectionModel().getSelectedItem().getVille() + "\n"
+                + "Téléphone:  " + tableClient.getSelectionModel().getSelectedItem().getTelephone() + "\n"
+        ));
+        JFXButton button = new JFXButton("OK");
+        button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                dialog.close();
+            }
+        });
+        content.setActions(button);
+        dialog.show();
     }
 
     @FXML
@@ -161,9 +189,9 @@ public class DashboardController implements Initializable {
             cliDAO.Delete(tableClient.getSelectionModel().getSelectedItem());
             chargement();
         } catch (Exception ex) {
-             Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setContentText("Problème de suppression dans la base");
-                alert.showAndWait();
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Problème de suppression dans la base");
+            alert.showAndWait();
         }
 
     }
