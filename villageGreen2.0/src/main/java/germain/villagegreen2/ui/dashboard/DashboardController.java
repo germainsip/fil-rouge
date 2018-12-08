@@ -161,16 +161,10 @@ public class DashboardController implements Initializable {
     @FXML
     private void showdetailHandler(ActionEvent event) {
         JFXDialogLayout content = new JFXDialogLayout();
-        Text title = new Text("Détail du client");
+        Text title = new Text("Fiche Client");
         title.setFont(Font.font("Verdana", 20));
-//        Text bod =new Text( "Nom:        " + tableClient.getSelectionModel().getSelectedItem().getNom() + "\n\n"
-//                + "Prénom:     " + tableClient.getSelectionModel().getSelectedItem().getPrenom() + "\n\n"
-//                + "Mail:       " + tableClient.getSelectionModel().getSelectedItem().getMail() + "\n\n"
-//                + "Téléphone:  " + tableClient.getSelectionModel().getSelectedItem().getTelephone() + "\n\n"
-//                + "Adresse:    " + tableClient.getSelectionModel().getSelectedItem().getRue() + " " + tableClient.getSelectionModel().getSelectedItem().getCodepo() + " " + tableClient.getSelectionModel().getSelectedItem().getVille() + "\n"
-//                + "Téléphone:  " + tableClient.getSelectionModel().getSelectedItem().getTelephone() + "\n\n");
-//        bod.setFont(Font.font ("Verdana",16));
         HBox fiche = new HBox();
+        //Première colonne
         VBox col1 = new VBox();
         col1.setSpacing(10);
         Text ligne1C1 = new Text("Nom:");
@@ -179,12 +173,40 @@ public class DashboardController implements Initializable {
         col1.getChildren().add(ligne2C1);
         Text ligne3C1 = new Text("Mail:");
         col1.getChildren().add(ligne3C1);
-        Text ligne4C1 = new Text("Adresse:");
+        Text ligne4C1 = new Text("Téléphone:");
         col1.getChildren().add(ligne4C1);
+        Text ligne5C1 = new Text("Adresse:");
+        col1.getChildren().add(ligne5C1);
+        Text ligne6C1 = new Text(" ");
+        col1.getChildren().add(ligne6C1);
+
+        if (tableClient.getSelectionModel().getSelectedItem().getType().equalsIgnoreCase("pro")) {
+            Text ligne7C1 = new Text("Client Professionnel ");
+            col1.getChildren().add(ligne7C1);
+            Text ligne8C1 = new Text("Siret: ");
+            col1.getChildren().add(ligne8C1);
+        }
+        //Deuxième colonne
         VBox col2 = new VBox();
         col2.setSpacing(10);
         Text ligne1C2 = new Text(tableClient.getSelectionModel().getSelectedItem().getNom());
         col2.getChildren().add(ligne1C2);
+        Text ligne2C2 = new Text(tableClient.getSelectionModel().getSelectedItem().getPrenom());
+        col2.getChildren().add(ligne2C2);
+        Text ligne3C2 = new Text(tableClient.getSelectionModel().getSelectedItem().getMail());
+        col2.getChildren().add(ligne3C2);
+        Text ligne4C2 = new Text(tableClient.getSelectionModel().getSelectedItem().getTelephone());
+        col2.getChildren().add(ligne4C2);
+        Text ligne5C2 = new Text(tableClient.getSelectionModel().getSelectedItem().getRue());
+        col2.getChildren().add(ligne5C2);
+        Text ligne6C2 = new Text(tableClient.getSelectionModel().getSelectedItem().getCodepo() + " " + tableClient.getSelectionModel().getSelectedItem().getVille());
+        col2.getChildren().add(ligne6C2);
+        if (tableClient.getSelectionModel().getSelectedItem().getType().equalsIgnoreCase("pro")) {
+            Text ligne7C2 = new Text(" ");
+            col2.getChildren().add(ligne7C2);
+            Text ligne8C2 = new Text(tableClient.getSelectionModel().getSelectedItem().getSiret());
+            col2.getChildren().add(ligne8C2);
+        }
         fiche.setSpacing(10);
         fiche.getChildren().add(col1);
         fiche.getChildren().add(col2);
@@ -194,7 +216,7 @@ public class DashboardController implements Initializable {
 //       
         JFXButton button = new JFXButton("OK");
         button.setButtonType(JFXButton.ButtonType.RAISED);
-        final JFXDialog dialog = new JFXDialog(stackDetail, content, JFXDialog.DialogTransition.CENTER);
+        final JFXDialog dialog = new JFXDialog(stackDetail, content, JFXDialog.DialogTransition.BOTTOM);
 
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
