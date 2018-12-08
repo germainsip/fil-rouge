@@ -38,6 +38,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -159,18 +161,41 @@ public class DashboardController implements Initializable {
     @FXML
     private void showdetailHandler(ActionEvent event) {
         JFXDialogLayout content = new JFXDialogLayout();
+        Text title = new Text("Détail du client");
+        title.setFont(Font.font("Verdana", 20));
+//        Text bod =new Text( "Nom:        " + tableClient.getSelectionModel().getSelectedItem().getNom() + "\n\n"
+//                + "Prénom:     " + tableClient.getSelectionModel().getSelectedItem().getPrenom() + "\n\n"
+//                + "Mail:       " + tableClient.getSelectionModel().getSelectedItem().getMail() + "\n\n"
+//                + "Téléphone:  " + tableClient.getSelectionModel().getSelectedItem().getTelephone() + "\n\n"
+//                + "Adresse:    " + tableClient.getSelectionModel().getSelectedItem().getRue() + " " + tableClient.getSelectionModel().getSelectedItem().getCodepo() + " " + tableClient.getSelectionModel().getSelectedItem().getVille() + "\n"
+//                + "Téléphone:  " + tableClient.getSelectionModel().getSelectedItem().getTelephone() + "\n\n");
+//        bod.setFont(Font.font ("Verdana",16));
+        HBox fiche = new HBox();
+        VBox col1 = new VBox();
+        col1.setSpacing(10);
+        Text ligne1C1 = new Text("Nom:");
+        col1.getChildren().add(ligne1C1);
+        Text ligne2C1 = new Text("Prénom:");
+        col1.getChildren().add(ligne2C1);
+        Text ligne3C1 = new Text("Mail:");
+        col1.getChildren().add(ligne3C1);
+        Text ligne4C1 = new Text("Adresse:");
+        col1.getChildren().add(ligne4C1);
+        VBox col2 = new VBox();
+        col2.setSpacing(10);
+        Text ligne1C2 = new Text(tableClient.getSelectionModel().getSelectedItem().getNom());
+        col2.getChildren().add(ligne1C2);
+        fiche.setSpacing(10);
+        fiche.getChildren().add(col1);
+        fiche.getChildren().add(col2);
+
+        content.setHeading(title);
+        content.setBody(fiche);
+//       
+        JFXButton button = new JFXButton("OK");
+        button.setButtonType(JFXButton.ButtonType.RAISED);
         final JFXDialog dialog = new JFXDialog(stackDetail, content, JFXDialog.DialogTransition.CENTER);
 
-        content.setHeading(new Text("Détail du client:"));
-        content.setBody(new Text(
-                  "Nom:        " + tableClient.getSelectionModel().getSelectedItem().getNom() + "\n"
-                + "Prénom:     " + tableClient.getSelectionModel().getSelectedItem().getPrenom() + "\n"
-                + "Mail:       " + tableClient.getSelectionModel().getSelectedItem().getMail() + "\n"
-                + "Téléphone:  " + tableClient.getSelectionModel().getSelectedItem().getTelephone() + "\n"
-                + "Adresse:    " + tableClient.getSelectionModel().getSelectedItem().getRue() + " " + tableClient.getSelectionModel().getSelectedItem().getCodepo() + " " + tableClient.getSelectionModel().getSelectedItem().getVille() + "\n"
-                + "Téléphone:  " + tableClient.getSelectionModel().getSelectedItem().getTelephone() + "\n"
-        ));
-        JFXButton button = new JFXButton("OK");
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
