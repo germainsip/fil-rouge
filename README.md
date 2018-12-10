@@ -24,13 +24,13 @@ __Road map:__
 
 * ~~TODO: fenetre ajout client~~ (OK)
 
-* TODO: fenetre liste client (OK)
+* ~~TODO: fenetre liste client~~ (OK)
 avec détail sous forme dialog et liste triable par clique droit
 
-![board1](dashboard.png)  
+![board1](dashboard.png)  ![fiche](ficheClient.png)
 
 * TODO: repartition des commandes par type client (en cours)
 
-![board2](dashboard2.png)
+![board2](PieChart.png)
 
 * TODO: Javadoc (à faire)
