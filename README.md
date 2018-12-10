@@ -1,5 +1,5 @@
 # fil-rouge
-Le repo de mon projet à l'AFPA
+Le dépot de mon projet à l'AFPA
 
 __Objectif:__
 Ce projet consiste à réaliser le CRM d'un magasin de musique nommé "Village Green".
@@ -16,7 +16,7 @@ Elaboration de l'appli desktop en suivant un modèle DAO
 ### WIP appli desktop en JavaFX
 __Fenêtre de création de clients:__ 
 
-Avec validation du formulaire (utilisant les validators de JFoenix) et selection de client pro. 
+Avec validation du formulaire (utilisant les validators de JFoenix via expression régulières) et selection de client pro. 
 
 <img src="addClient.gif" />
 
@@ -25,12 +25,16 @@ __Road map:__
 * ~~TODO: fenetre ajout client~~ (OK)
 
 * ~~TODO: fenetre liste client~~ (OK)
-avec détail sous forme dialog et liste triable par clique droit
+Avec détails sous forme dialog et liste triable par clique droit en utilisant la librairie ControlsFX.
 
-![board1](dashboard.png)  ![fiche](ficheClient.png)
+![board1](dashboard.png)  
 
-* TODO: repartition des commandes par type client (en cours)
+![fiche](ficheClient.png)
+
+* ~~TODO: repartition du CA par type client~~ (OK)
 
 ![board2](PieChart.png)
 
 * TODO: Javadoc (à faire)
+
+* UPDATE à envisager: ajout d'une fonction d'impression de la fiche client en pdf.
