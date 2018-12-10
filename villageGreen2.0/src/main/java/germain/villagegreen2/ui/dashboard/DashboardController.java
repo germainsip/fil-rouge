@@ -15,8 +15,11 @@ import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
 import germain.villagegreen2.DAL.Client;
 import germain.villagegreen2.DAL.ClientDAO;
+import germain.villagegreen2.Statistics.Statistic;
+import germain.villagegreen2.Statistics.StatisticDAO;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -124,7 +127,16 @@ public class DashboardController implements Initializable {
             System.exit(0);
 
         }
-        //TODO ajouter le chargement du pie
+        try {
+            //TODO gérer les exceptions
+            Statistic statType = new StatisticDAO().createStatType();
+            ObservableList<PieChart.Data> Stats
+                    = FXCollections.observableArrayList(new PieChart.Data("Professionnelles \n" + statType.getCaPro()+" €", statType.getCaPro()), new PieChart.Data("Particuliers \n" + statType.getCaPar()+" €", statType.getCaPar()));
+            pieType.setData(Stats);
+            pieType.setLegendVisible(false);
+        } catch (SQLException ex) {
+            Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML

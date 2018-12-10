@@ -22,7 +22,7 @@ import java.sql.Statement;
  * @author germain
  */
 public  class villageCon {
-    private static final String URL_VILLAGE = "jdbc:mysql://localhost:3306/villagegreen";
+    private static final String URL_VILLAGE = "jdbc:mysql://localhost:3306/villagegreen?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC";
     private static final String USR_VILLAGE = "root";
     private static final String PWD_VILLAGE = "Grm1";
     public  static Connection con = null;
