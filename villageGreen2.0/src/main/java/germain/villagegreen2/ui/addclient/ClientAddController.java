@@ -235,6 +235,7 @@ public class ClientAddController implements Initializable {
         }
     }
 
+    
     @FXML
     private void AddClientHandelButton(ActionEvent event) {
         formFlag = flagNomField
@@ -271,7 +272,7 @@ public class ClientAddController implements Initializable {
                         .title("Insertion Client")
                         .text("Le nouveau Client a bien été ajouté.")
                         .graphic(null)
-                        .hideAfter(Duration.seconds(5))
+                        .hideAfter(Duration.seconds(3))
                         .position(Pos.CENTER)
                         .onAction(new EventHandler<ActionEvent>() {
                             @Override
@@ -294,7 +295,10 @@ public class ClientAddController implements Initializable {
         }
 
     }
-
+/**
+ * Close action methode
+ * @param event 
+ */
     @FXML
     private void CancelHandelButton(ActionEvent event) {
         Stage stage = (Stage) rootPane.getScene().getWindow();
@@ -302,6 +306,9 @@ public class ClientAddController implements Initializable {
         stage.close();
     }
     
+    /**
+     * Clearing Form methode
+     */
     private void ClearFields(){
         NomField.clear();
         PrenomField.clear();
