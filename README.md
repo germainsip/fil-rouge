@@ -40,3 +40,7 @@ Avec détails sous forme dialog et liste triable par clique droit en utilisant l
 suivez le lien pour visionner la maquette:
 
 https://germainsip.github.io/village-frontend
+
+## Enfin, le site fonctionnel
+
+https://dev.amorce.org/gsipiere/village/
