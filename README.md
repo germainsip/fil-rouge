@@ -35,6 +35,8 @@ Avec détails sous forme dialog et liste triable par clique droit en utilisant l
 
 ![board2](PieChart.png)
 
-* TODO: Javadoc (à faire)
+## Adaptation de la maquette (plus actuelle)
 
-* UPDATE à envisager: ajout d'une fonction d'impression de la fiche client en pdf.
+suivez le lien pour visionner la maquette:
+
+https://germainsip.github.io/village-frontend
